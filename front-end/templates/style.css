@@ -1,12 +1,12 @@
-@font-face {
+/* @font-face {
     font-family: 'LazyDogFont';
     src: url('fonts/lazy_dog.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
+} */
 
 body {
-    font-family: 'LazyDogFont', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     background-color: #dadfdb;
     color: #664d3b;
 }
