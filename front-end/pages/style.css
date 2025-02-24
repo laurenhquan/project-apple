@@ -19,6 +19,12 @@ header {
     background-color: #dadfdb;
 }
 
+footer {
+    align-items: end;
+    padding: 15px 30px;
+    background-color: #dadfdb;
+}
+
 .logo {
     font-size: 24px;
     font-weight: bold;
@@ -60,3 +66,4 @@ nav ul li a.active {
 main {
     padding: 20px 30px;
 }
+
