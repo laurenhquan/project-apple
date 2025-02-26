@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'LazyDogFont', 'Courier New', Courier, monospace;
+    font-family: "Gamja Flower", serif;
     background-color: #dadfdb;
     color: #664d3b;
 }
@@ -27,7 +27,7 @@ footer {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
     letter-spacing: 2px;
     color: #664d3b;
@@ -50,7 +50,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: bold;
     color: #664d3b; /* Default text color */
     padding: 5px 10px;
@@ -78,9 +78,9 @@ main {
     bottom: 20px;
     right: 30px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: bold;
-    color: #dadfdb;
+    color: #e3d4c2;
     background-color: #664d3b;
     padding: 10px 20px;
     border-radius: 20px;
@@ -88,7 +88,7 @@ main {
 }
 
 .login-button:hover {
-    background-color: #4e3b2c; 
+    /* background-color: #4e3b2c; */
     transform: scale(1.05);
 }
 
@@ -107,8 +107,8 @@ main {
     border-radius: 20px;
     background-color: #e3d4c2;
     color: #664d3b;
-    font-family: 'LazyDogFont', sans-serif;
-    font-size: 16px;
+    font-family: "Gamja Flower", serif;
+    font-size: 25px;
 }
 
 /* placeholder text style */
@@ -127,18 +127,18 @@ main {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    font-size: 16px;
+    font-size: 25px;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s;
 }
 
 .login-container input,
 .login-container button {
-    font-family: 'LazyDogFont', 'Courier New', Courier, monospace;
+    font-family: "Gamja Flower", serif;
 }
 
 /* hover effect for login button */
 .login-container button:hover {
-    background-color: #4e3b2c;
-    transform: scale(1.1);
+    /* background-color: #4e3b2c; */
+    transform: scale(1.05);
 }
