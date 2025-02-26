@@ -26,8 +26,15 @@
     <main>
         <h2 style="font-size: 40px;">Make a Post</h2>
         <div class="login-container">
-            <form action="post-success.html" method="post" autocomplete="off">
-                <input type="text" placeholder="Enter topic" name="topic" required>
+            <form action="post-successful.html" method="post" autocomplete="off">
+                <select name="topic" required>
+                    <option value="placeholder" style="font-weight: bold; color: #b89179;" disabled selected value>-- Select a Topic --</option>
+                    <option value="eatery">Cafes/Restaurants</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="food">Food</option>
+                    <option value="products">Products</option>
+                </select>
+                <input type="text" placeholder="Enter name" name="name" required>
                 <label for="rating" style="font-size: 25px; font-weight: bold;">Rating</label>
                 <input type="range" id="rating" name="rating" min="0" max="10" step="1" style="accent-color: #664d3b;" required>
                 <textarea placeholder="Enter description" name="topic"></textarea>

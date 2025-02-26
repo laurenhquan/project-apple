@@ -99,6 +99,7 @@ main {
  /* input field style */
 
 .login-container input,
+.login-container select,
 .login-container textarea {
     display: block;
     width: 250px;
@@ -136,6 +137,7 @@ main {
 
 .login-container input,
 .login-container button,
+.login-container select,
 .login-container textarea {
     font-family: "Gamja Flower", serif;
 }
