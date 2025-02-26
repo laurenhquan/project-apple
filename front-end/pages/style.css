@@ -1,12 +1,12 @@
-@font-face {
-    font-family: 'LazyDogFont';
-    src: url('fonts/lazy_dog.ttf') format('truetype');
+/*@font-face {
+    font-family: 'DynaPuff';
+    src: url('fonts/DynaPuff-SemiBold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
 body {
-    font-family: "Gamja Flower", serif;
+    font-family: "DynaPuff", serif;
     background-color: #dadfdb;
     color: #664d3b;
 }
@@ -109,7 +109,7 @@ main {
     border-radius: 20px;
     background-color: #e3d4c2;
     color: #664d3b;
-    font-family: "Gamja Flower", serif;
+    font-family: "DynaPuff", serif;
     font-size: 25px;
 }
 
@@ -139,7 +139,7 @@ main {
 .login-container button,
 .login-container select,
 .login-container textarea {
-    font-family: "Gamja Flower", serif;
+    font-family: "DynaPuff", serif;
 }
 
 /* hover effect for login button */
