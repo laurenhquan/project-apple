@@ -98,7 +98,8 @@ main {
 }
  /* input field style */
 
-.login-container input {
+.login-container input,
+.login-container textarea {
     display: block;
     width: 250px;
     padding: 12px;
@@ -112,7 +113,8 @@ main {
 }
 
 /* placeholder text style */
-.login-container input::placeholder {
+.login-container input::placeholder,
+.login-container textarea::placeholder {
     color: #b89179;
     font-weight: bold;
 }
@@ -133,7 +135,8 @@ main {
 }
 
 .login-container input,
-.login-container button {
+.login-container button,
+.login-container textarea {
     font-family: "Gamja Flower", serif;
 }
 
