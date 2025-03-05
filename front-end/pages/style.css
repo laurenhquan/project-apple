@@ -1,12 +1,13 @@
-@font-face {
-    font-family: 'LazyDogFont';
-    src: url('fonts/lazy_dog.ttf') format('truetype');
+/*@font-face {
+    font-family: 'DynaPuff';
+    src: url('fonts/DynaPuff-SemiBold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-}
+}*/
 
 body {
-    font-family: "Gamja Flower", serif;
+    font-family: "DynaPuff", serif;
+    font-weight: 500;
     background-color: #dadfdb;
     color: #664d3b;
 }
@@ -28,7 +29,7 @@ footer {
 
 .logo {
     font-size: 40px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 2px;
     color: #664d3b;
 }
@@ -51,7 +52,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 500;
     color: #664d3b; /* Default text color */
     padding: 5px 10px;
     border-radius: 20px;
@@ -68,6 +69,7 @@ nav ul li a.active {
 main {
     padding: 20px 30px;
     text-align: center;
+    font-weight: 500;
     margin-top: 50px;
 }
 
@@ -79,7 +81,7 @@ main {
     right: 30px;
     text-decoration: none;
     font-size: 25px;
-    font-weight: bold;
+    font-weight: 500;
     color: #e3d4c2;
     background-color: #664d3b;
     padding: 10px 20px;
@@ -94,6 +96,7 @@ main {
 
 .login-container {
     text-align: center;
+    font-weight: 500;
     margin-top: 50px;
 }
  /* input field style */
@@ -109,7 +112,7 @@ main {
     border-radius: 20px;
     background-color: #e3d4c2;
     color: #664d3b;
-    font-family: "Gamja Flower", serif;
+    font-family: "DynaPuff", serif;
     font-size: 25px;
 }
 
@@ -117,7 +120,7 @@ main {
 .login-container input::placeholder,
 .login-container textarea::placeholder {
     color: #b89179;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 /* log in button style */
@@ -139,7 +142,7 @@ main {
 .login-container button,
 .login-container select,
 .login-container textarea {
-    font-family: "Gamja Flower", serif;
+    font-family: "DynaPuff", serif;
 }
 
 /* hover effect for login button */
