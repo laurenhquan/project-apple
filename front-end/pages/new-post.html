@@ -26,6 +26,7 @@
     <main>
         <h2 style="font-size: 40px;">Make a Post</h2>
         <div class="login-container">
+
             <form action="post-successful.html" method="post" autocomplete="off">
                 <select name="topic" required>
                     <option value="placeholder" style="font-weight: bold; color: #b89179;" disabled selected value>-- Select a Topic --</option>
@@ -36,11 +37,35 @@
                 </select>
                 <input type="text" placeholder="Enter name" name="name" required>
                 <label for="rating" style="font-size: 25px; font-weight: bold;">Rating</label>
+                <img id="ratingImage" src="images/imagesrating_5.png" alt="Rating Image" style="width: 150px; display: block; margin: auto;">
                 <input type="range" id="rating" name="rating" min="0" max="10" step="1" style="accent-color: #664d3b;" required>
                 <textarea placeholder="Enter description" name="topic"></textarea>
                 <button type="submit"><b>></b></button>
             </form>
         </div>
     </main>
+    <script>
+        const ratingSlider = document.getElementById("rating");
+        const ratingImage = document.getElementById("ratingImage");
+
+        const imageMap = {
+            "0": "images/imagesrating_0.png",
+            "1": "images/imagesrating_1.png",
+            "2": "images/imagesrating_2.png",
+            "3": "images/imagesrating_3.png",
+            "4": "images/imagesrating_4.png",
+            "5": "images/imagesrating_5.png",
+            "6": "images/imagesrating_6.png",
+            "7": "images/imagesrating_7.png",
+            "8": "images/imagesrating_8.png",
+            "9": "images/imagesrating_9.png",
+            "10":"images/imagesrating_10.png"
+        };
+
+        ratingSlider.addEventListener("input", function() {
+            const value = ratingSlider.value;
+            ratingImage.src = imageMap[value] || "imagesrating_5.png";
+        });
+    </script>
 </body>
 </html>
