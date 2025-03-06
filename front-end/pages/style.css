@@ -151,6 +151,7 @@ main {
     transform: scale(1.05);
 }
 
+/* "missions" popup box */
 .modal {
     display: flex; /* Show the modal immediately */
     justify-content: center;
