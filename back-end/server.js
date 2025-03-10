@@ -3,7 +3,7 @@ const conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     pass: '',
-    database: 'project-apple'
+    database: 'project_apple'
 });
 
 conn.connect((err) => {
