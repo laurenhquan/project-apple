@@ -168,7 +168,6 @@ main {
     transform: scale(1.05);
 }
 
-<<<<<<< HEAD
 /* "missions" popup box */
 .modal {
     display: flex; /* Show the modal immediately */
@@ -240,51 +239,3 @@ main {
     background-color: #e3d4c2;
     color: #664d3b;
 }
-=======
-/* topics page organization */
-
-.topic-container {
-    display: grid;
-    grid-template-areas: 'a b d e';
-    justify-content: center;
-    gap: 50px;
-}
-
-.topic-container a {
-    display: inline-block;
-    text-decoration: none;
-    background-color: #dadfdb;
-    color: #664d3b;
-    align-content: center;
-    justify-content: center;
-    height: 150px;
-    width: 200px;
-    padding: 10px 20px;
-    border: solid;
-    border-color: #664d3b;
-    border-radius: 40px;
-    font-size: 25px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.topic-container a:hover {
-    background-color: #664d3b;
-    color: #e3d4c2;
-    transform: scale(1.05);
-}
-
-.topic-container form input {
-    width: 950px;
-    display: block;
-    padding: 12px;
-    margin: 10px auto;
-    border: none;
-    border-radius: 20px;
-    background-color: #e3d4c2;
-    color: #664d3b;
-    font-size: 25px;
-    font-family: "DynaPuff", serif;
-}
->>>>>>> d8f1fea (added topics to topics page)
