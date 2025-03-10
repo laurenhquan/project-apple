@@ -34,6 +34,10 @@ footer {
     color: #664d3b;
 }
 
+h2 {
+    font-size: 40px;
+}
+
 /* nav menu */
 nav ul {
     list-style: none;
@@ -54,7 +58,7 @@ nav ul li a {
     font-size: 25px;
     font-weight: 500;
     color: #664d3b; /* Default text color */
-    padding: 5px 10px;
+    padding: 10px 20px;
     border-radius: 20px;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -102,7 +106,6 @@ main {
  /* input field style */
 
 .login-container input,
-.login-container select,
 .login-container textarea {
     display: block;
     width: 250px;
@@ -112,6 +115,20 @@ main {
     border-radius: 20px;
     background-color: #e3d4c2;
     color: #664d3b;
+    font-family: "DynaPuff", serif;
+    font-size: 25px;
+}
+
+.login-container select {
+    display: block;
+    width: 300px; 
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    background-color: #e3d4c2;
+    color: #664d3b;
+    text-align: center;
     font-family: "DynaPuff", serif;
     font-size: 25px;
 }
