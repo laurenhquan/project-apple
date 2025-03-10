@@ -203,7 +203,7 @@ main {
 }
 
 .topic-container form input {
-    width: 950px;
+    width: 100%;
     display: block;
     padding: 12px;
     margin: 10px auto;
@@ -213,4 +213,9 @@ main {
     color: #664d3b;
     font-size: 25px;
     font-family: "DynaPuff", serif;
+}
+
+.topic-container form input::placeholder {
+    color: #b89179;
+    font-weight: 500;
 }
