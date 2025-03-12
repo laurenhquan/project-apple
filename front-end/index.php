@@ -14,12 +14,15 @@
 
 <body>
     <header>
-        <a class="logo" href="index.html" style="text-decoration: none;">PROJECT APPLE</a>
+        <a class="logo" href="index.php" style="text-decoration: none;">PROJECT APPLE</a>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.php" class="active">Home</a></li>
                 <li><a href="topics.html">Topics</a></li>
                 <li><a href="mission.html">Our Mission</a></li>
+                <?php if (session_status() == 2): ?>
+                    <li><a href="profile.php">My Profile</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>

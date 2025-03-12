@@ -1,4 +1,4 @@
-<?php require $_SERVER['DOCUMENT_ROOT'] . "\project-apple\back-end\user_in.php"?>
+<?php require "..\back-end\user_in.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,12 +14,15 @@
 
 <body>
     <header>
-        <a class="logo" href="index.html" style="text-decoration: none;">PROJECT APPLE</a>
+        <a class="logo" href="index.php" style="text-decoration: none;">PROJECT APPLE</a>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="topics.html">Topics</a></li>
                 <li><a href="mission.html">Our Mission</a></li>
+                <?php if (session_status() == 2): ?>
+                    <li><a href="profile.php">My Profile</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
@@ -30,12 +33,12 @@
             <form action="entry.php" method="POST" autocomplete="off">
                 <input type="text" placeholder="Enter username" name="username" value="<?= htmlspecialchars($_POST["username"] ?? "") ?>" required>
                 <input type="password" placeholder="Enter password" name="pass" required>
+                <?php if ($is_invalid): ?>
+                    <em style="color: #c1121f;">Invalid login</em><br>
+                <?php endif; ?>
                 <button type="submit"><b>></b></button>
             </form>
         </div>
-        <?php if ($is_invalid): ?>
-            <em style="color: #c1121f;">Invalid login</em>
-        <?php endif; ?>
     </main>
 </body>
 </html>

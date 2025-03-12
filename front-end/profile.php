@@ -23,6 +23,8 @@
         </nav>
     </header>
 
+    <a href="../back-end/user_out.php" class="login-button">Sign out</a>
+
     <main>
         <h2>My Profile</h2>
 
@@ -35,7 +37,7 @@
             <form autocomplete="off">
                 <input type="text" placeholder="Enter new username" name="new_user_name" required>
                 <input type="password" placeholder="Enter password" name="pass" required>
-                <button type=s"submit"><b>></b></button>
+                <button type="submit"><b>></b></button>
             </form>
         </div>
         
@@ -48,25 +50,6 @@
                 <button type="submit"><b>></b></button>
             </form>
         </div>
-        
-
-        <!-- <div class="login-container">
-            <form action="post-successful.html" method="post" autocomplete="off">
-                <select name="topic" required>
-                    <option value="placeholder" style="font-weight: bold; color: #b89179;" disabled selected value>-- Select a Topic --</option>
-                    <option value="eatery">Cafes + Restaurants</option>
-                    <option value="entertainment">Entertainment</option>
-                    <option value="food">Food</option>
-                    <option value="products">Products</option>
-                </select>
-                <input type="text" placeholder="Enter name" name="name" style="width: 275px;" required>
-                <label for="rating" style="font-size: 25px; font-weight: bold;">Rating</label>
-                <img id="ratingImage" src="images/imagesrating_5.png" alt="Rating Image" style="width: 150px; display: block; margin: auto;">
-                <input type="range" id="rating" name="rating" min="0" max="10" step="1" style="accent-color: #664d3b; width: 275px;" required>
-                <textarea placeholder="Enter description" name="topic" style="width: 275px;"></textarea>
-                <button type="submit"><b>></b></button>
-            </form>
-        </div> -->
     </main>
 </body>
 </html>
