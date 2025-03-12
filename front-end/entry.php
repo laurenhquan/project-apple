@@ -1,3 +1,5 @@
+<?php require $_SERVER['DOCUMENT_ROOT'] . "\project-apple\back-end\user_in.php"?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,20 +24,18 @@
         </nav>
     </header>
 
-    <!-- <?php require __DIR__ . "./user_in.php";?> -->
-    <!-- <?php echo "Hello World" ?> -->
     <main>
         <h2>Log in / Sign up</h2>
         <div class="login-container">
             <form action="logged-in.html" method="post" autocomplete="off">
-                <input type="text" placeholder="Enter username" name="user_name" required> <!-- value="<?= htmlspecialchars($_POST["user_name"] ?? "") ?>" -->
+                <input type="text" placeholder="Enter username" name="user_name" value="<?= htmlspecialchars($_POST["user_name"] ?? "") ?>" required>
                 <input type="password" placeholder="Enter password" name="pass" required>
                 <button type="submit"><b>></b></button>
             </form>
         </div>
-        <!-- <?php if ($is_invalid): ?>
-                <em style="color: #c1121f;">Invalid login</em>
-        <?php endif; ?> -->
+        <?php if ($is_invalid): ?>
+            <em style="color: #c1121f;">Invalid login</em>
+        <?php endif; ?>
     </main>
 </body>
 </html>
