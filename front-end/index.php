@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +22,17 @@
                 <li><a href="index.php" class="active">Home</a></li>
                 <li><a href="topics.html">Topics</a></li>
                 <li><a href="mission.html">Our Mission</a></li>
-                <?php if (session_status() == 2): ?>
+                <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="profile.php">My Profile</a></li>
                 <?php endif; ?>
             </ul>
         </nav>
     </header>
-    <a href="entry.php" class="login-button">Log in / Sign up</a>
+    <?php if (!isset($_SESSION['user_id'])): ?>
+        <a href="entry.php" class="login-button">Log in / Sign up</a>
+    <?php else: ?>
+        <a href="new-post.html" class="login-button">+ Make a Post</a>
+    <?php endif; ?>
     <main>
         <h2>Welcome to Project Apple!</h2>
     </main>

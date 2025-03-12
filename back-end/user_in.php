@@ -19,7 +19,7 @@
                 $_SESSION["username"] = $existing_user["username"];
                 $_SESSION["pass_hash"] = $existing_user["pass_hash"];
 
-                header("Location: logged-in.html"); // directs user to home page
+                header("Location: index.php"); // directs user to home page
                 exit;
             }
         }
@@ -42,7 +42,7 @@
                 $_SESSION["username"] = $_POST["username"];
                 $_SESSION["pass_hash"] = $_POST["pass_hash"];
 
-                header("Location: logged-in.html"); // directs user to home page
+                header("Location: index.php"); // directs user to home page
                 exit;
             } else {
                 die($mysqli->error . " " . $mysqli->errno); // kill if execute gives error
