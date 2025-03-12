@@ -38,6 +38,11 @@ h2 {
     font-size: 40px;
 }
 
+h3 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
 /* nav menu */
 nav ul {
     list-style: none;
@@ -222,7 +227,7 @@ main {
     background-color: #664d3b;
     color: #e3d4c2;
     font-family: 'DynaPuff', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
@@ -290,4 +295,39 @@ main {
 .topic-container form input::placeholder {
     color: #b89179;
     font-weight: 500;
+}
+
+/* profile page forms */
+.profile-container form input {
+    width: 250px;
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    background-color: #e3d4c2;
+    color: #664d3b;
+    font-size: 15px;
+    font-family: "DynaPuff", serif;
+}
+
+.profile-container form input::placeholder {
+    color: #b89179;
+    font-weight: 500;
+}
+
+.profile-container button {
+    background-color: #664d3b;
+    color: #dadfdb;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.profile-container button:hover {
+    font-family: "DynaPuff", serif;
+    transform: scale(1.05);
 }
