@@ -27,8 +27,8 @@
     <main>
         <h2>Log in / Sign up</h2>
         <div class="login-container">
-            <form action="logged-in.html" method="post" autocomplete="off">
-                <input type="text" placeholder="Enter username" name="user_name" value="<?= htmlspecialchars($_POST["user_name"] ?? "") ?>" required>
+            <form action="entry.php" method="POST" autocomplete="off">
+                <input type="text" placeholder="Enter username" name="username" value="<?= htmlspecialchars($_POST["username"] ?? "") ?>" required>
                 <input type="password" placeholder="Enter password" name="pass" required>
                 <button type="submit"><b>></b></button>
             </form>
