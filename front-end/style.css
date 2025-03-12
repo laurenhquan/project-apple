@@ -34,6 +34,15 @@ footer {
     color: #664d3b;
 }
 
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
 /* nav menu */
 nav ul {
     list-style: none;
@@ -54,7 +63,7 @@ nav ul li a {
     font-size: 25px;
     font-weight: 500;
     color: #664d3b; /* Default text color */
-    padding: 5px 10px;
+    padding: 10px 20px;
     border-radius: 20px;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -102,7 +111,6 @@ main {
  /* input field style */
 
 .login-container input,
-.login-container select,
 .login-container textarea {
     display: block;
     width: 250px;
@@ -112,6 +120,20 @@ main {
     border-radius: 20px;
     background-color: #e3d4c2;
     color: #664d3b;
+    font-family: "DynaPuff", serif;
+    font-size: 25px;
+}
+
+.login-container select {
+    display: block;
+    width: 300px; 
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    background-color: #e3d4c2;
+    color: #664d3b;
+    text-align: center;
     font-family: "DynaPuff", serif;
     font-size: 25px;
 }
@@ -205,7 +227,7 @@ main {
     background-color: #664d3b;
     color: #e3d4c2;
     font-family: 'DynaPuff', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
@@ -221,4 +243,91 @@ main {
     transform: scale(1.05);
     background-color: #e3d4c2;
     color: #664d3b;
+}
+
+/* topics page organization */
+
+.topic-container {
+    display: grid;
+    grid-template-areas: 'a b d e';
+    justify-content: center;
+    gap: 50px;
+}
+
+.topic-container a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #dadfdb;
+    color: #664d3b;
+    align-content: center;
+    justify-content: center;
+    height: 150px;
+    width: 200px;
+    padding: 10px 20px;
+    border: solid;
+    border-color: #664d3b;
+    border-radius: 40px;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.topic-container a:hover {
+    background-color: #664d3b;
+    color: #e3d4c2;
+    transform: scale(1.05);
+}
+
+.topic-container form input {
+    width: 100%;
+    display: block;
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    background-color: #e3d4c2;
+    color: #664d3b;
+    font-size: 25px;
+    font-family: "DynaPuff", serif;
+}
+
+.topic-container form input::placeholder {
+    color: #b89179;
+    font-weight: 500;
+}
+
+/* profile page forms */
+.profile-container form input {
+    width: 250px;
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    background-color: #e3d4c2;
+    color: #664d3b;
+    font-size: 15px;
+    font-family: "DynaPuff", serif;
+}
+
+.profile-container form input::placeholder {
+    color: #b89179;
+    font-weight: 500;
+}
+
+.profile-container button {
+    background-color: #664d3b;
+    color: #dadfdb;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.profile-container button:hover {
+    font-family: "DynaPuff", serif;
+    transform: scale(1.05);
 }
