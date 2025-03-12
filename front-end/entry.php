@@ -22,7 +22,8 @@
         </nav>
     </header>
 
-    <?php require __DIR__ . "./user_in.php";?>
+    <!-- <?php require __DIR__ . "./user_in.php";?> -->
+    <?php echo "Hello World" ?>
     <main>
         <h2>Log in / Sign up</h2>
         <div class="login-container">
@@ -32,9 +33,9 @@
                 <button type="submit"><b>></b></button>
             </form>
         </div>
-        <?php if ($is_invalid): ?>
+        <!-- <?php if ($is_invalid): ?>
                 <em style="color: #c1121f;">Invalid login</em>
-        <?php endif; ?>
+        <?php endif; ?> -->
     </main>
 </body>
 </html>
