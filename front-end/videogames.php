@@ -1,7 +1,9 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Project Apple | Topics</title>
+    <title>Project Apple | Video Games</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -15,9 +17,12 @@
         <a class="logo" href="index.php" style="text-decoration: none;">PROJECT APPLE</a>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="topics.html" class="active">Topics</a></li>
-                <li><a href="mission.html">Our Mission</a></li>
+            <li><a href="index.php">Home</a></li>
+                <li><a href="topics.php" class="active">Topics</a></li>
+                <li><a href="mission.php">Our Mission</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="profile.php">My Profile</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>

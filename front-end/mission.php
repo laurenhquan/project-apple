@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +18,11 @@
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="topics.html">Topics</a></li>
-                <li><a href="mission.html" class="active">Our Mission</a></li>
+                <li><a href="topics.php">Topics</a></li>
+                <li><a href="mission.php" class="active">Our Mission</a>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="profile.php">My Profile</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,13 +14,13 @@
 
 <body>
     <header>
-        <a class="logo" href="logged-in.html" style="text-decoration: none;">PROJECT APPLE</a>
+        <a class="logo" href="index.php" style="text-decoration: none;">PROJECT APPLE</a>
         <nav>
             <ul>
-                <li><a href="logged-in.html">Home</a></li>
-                <li><a href="topics.html">Topics</a></li>
-                <li><a href="mission.html">Our Mission</a></li>
-                <li><a href="profile.html">My Profile</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="topics.php">Topics</a></li>
+                <li><a href="mission.php">Our Mission</a></li>
+                <li><a href="profile.php" class="active">My Profile</a></li>
             </ul>
         </nav>
     </header>

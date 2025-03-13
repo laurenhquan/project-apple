@@ -20,8 +20,8 @@
         <nav>
             <ul>
                 <li><a href="index.php" class="active">Home</a></li>
-                <li><a href="topics.html">Topics</a></li>
-                <li><a href="mission.html">Our Mission</a></li>
+                <li><a href="topics.php">Topics</a></li>
+                <li><a href="mission.php">Our Mission</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="profile.php">My Profile</a></li>
                 <?php endif; ?>

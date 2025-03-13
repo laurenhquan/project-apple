@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +18,11 @@
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="topics.html" class="active">Topics</a></li>
-                <li><a href="mission.html">Our Mission</a></li>
+                <li><a href="topics.php" class="active">Topics</a></li>
+                <li><a href="mission.php">Our Mission</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="profile.php">My Profile</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
@@ -32,14 +37,14 @@
         </div> -->
 
         <div class="topic-container">
-            <a href="eatery.html">Cafes<br>+<br>Restaurants</a>
-            <a href="food.html">Food</a>
-            <a href="drinks.html">Drinks</a>
-            <a href="products.html">Products</a>
-            <a href="movies.html">Movies</a>
-            <a href="tvshows.html">TV Shows</a>
-            <a href="videogames.html">Video Games</a>
-            <a href="books.html">Books</a>
+            <a href="eatery.php">Cafes<br>+<br>Restaurants</a>
+            <a href="food.php">Food</a>
+            <a href="drinks.php">Drinks</a>
+            <a href="products.php">Products</a>
+            <a href="movies.php">Movies</a>
+            <a href="tvshows.php">TV Shows</a>
+            <a href="videogames.php">Video Games</a>
+            <a href="books.php">Books</a>
         </div>
     </main>
 </body>
