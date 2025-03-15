@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="topics.html">Topics</a></li>
-                <li><a href="mission.html">Our Mission</a></li>
+                <li><a href="#" id="missionButton">Our Mission</a></li>
             </ul>
         </nav>
     </header>
@@ -27,6 +27,7 @@
         <h2 style="font-size: 40px; font-weight: 500;">Welcome to Project Apple!</h2>
     </main>
 
+    <!--Missions Pop Up Start-->
     <div id="missionModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -35,18 +36,32 @@
         </div>
     </div>
 
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const modal = document.getElementById("missionModal");
-            const closeButton = document.querySelector(".close");
-            //delays pop up by 3 seconds
-            setTimeout(function (){
+        const modal = document.getElementById("missionModal");
+        const closeButton = document.querySelector(".close");
+        const missionButton = document.getElementById("missionButton");
+    
+        if (missionButton) {
+            missionButton.addEventListener("click", function (event) {
+                event.preventDefault();
                 modal.style.display = "flex";
-            }, 3000);
-            closeButton.addEventListener("click", function () {
-                modal.style.display = "none";
             });
+        }
+    
+        closeButton.addEventListener("click", function () {
+            modal.style.display = "none";
         });
-    </script>
+    
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+    
+        </script>
+    <!--Missions Pop Up End-->
 </body>
 </html>
