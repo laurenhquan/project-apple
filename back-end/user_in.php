@@ -2,7 +2,7 @@
     $is_invalid = false; // to check for invalid login in entry.html
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $mysqli = require __DIR__ . "./database.php"; // connects to database
+        $mysqli = require __DIR__ . "/database.php"; // connects to database
 
         $check_user = sprintf("SELECT * FROM users WHERE username = '%s'", $mysqli->real_escape_string($_POST["username"])); // query to check if user exists in db
 
