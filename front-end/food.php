@@ -19,7 +19,7 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="topics.php" class="active">Topics</a></li>
-                <li><a href="mission.php">Our Mission</a></li>
+                <li><a href="#" id="missionButton">Our Mission</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="profile.php">My Profile</a></li>
                 <?php endif; ?>
@@ -31,5 +31,42 @@
         <h2>Food</h2>
         <p>display posts here</p>
     </main>
+
+    <!--Missions Pop Up Start-->
+    <div id="missionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>OUR MISSION</h2>
+            <p>Inspired by AppleRankings.com, Project Apple aims to create communities through tier-blogs. By creating such reviews, our users are able to connect with one another and try new things!</p>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("missionModal");
+        const closeButton = document.querySelector(".close");
+        const missionButton = document.getElementById("missionButton");
+
+        if (missionButton) {
+            missionButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                modal.style.display = "flex";
+            });
+        }
+
+        closeButton.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+
+        </script>
+    <!--Missions Pop Up End-->
 </body>
 </html>

@@ -19,7 +19,7 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="topics.php">Topics</a></li>
-                <li><a href="mission.php" class="active">Our Mission</a>
+                <li><a href="#" id="missionButton">Our Mission</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li><a href="profile.php">My Profile</a></li>
                 <?php endif; ?>
