@@ -1,7 +1,9 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Project Apple | Post Successful</title>
+    <title>Project Apple | Video Games</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -15,22 +17,19 @@
         <a class="logo" href="index.php" style="text-decoration: none;">PROJECT APPLE</a>
         <nav>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="topics.php">Topics</a></li>
+            <li><a href="index.php">Home</a></li>
+                <li><a href="topics.php" class="active">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
-                <li><a href="profile.php">My Profile</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="profile.php">My Profile</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
-    <main>
-        <h2>Post Successful!</h2>
 
-        <p style="font-size: 25px; font-weight: bold;">Would you like to...</p>
-        <div class="button-container">
-            <a href="#" class="button">Review Your Post</a> <!-- review-post.html -->
-            <a href="#" class="button">See Related Posts</a> <!-- depending on the topic, direct user to topic's page -->
-            <a href="new-post.html" class="button">+ Make a New Post</a>
-        </div>
+    <main>
+        <h2>Video Games</h2>
+        <p>display posts here</p>
     </main>
 
     <!--Missions Pop Up Start-->

@@ -1,7 +1,9 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Project Apple | Post Successful</title>
+    <title>Project Apple | My Profile</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -18,18 +20,37 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="topics.php">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
-                <li><a href="profile.php">My Profile</a></li>
+                <li><a href="profile.php" class="active">My Profile</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h2>Post Successful!</h2>
 
-        <p style="font-size: 25px; font-weight: bold;">Would you like to...</p>
-        <div class="button-container">
-            <a href="#" class="button">Review Your Post</a> <!-- review-post.html -->
-            <a href="#" class="button">See Related Posts</a> <!-- depending on the topic, direct user to topic's page -->
-            <a href="new-post.html" class="button">+ Make a New Post</a>
+    <a href="../back-end/user_out.php" class="login-button">Sign out</a>
+
+    <main>
+        <h2>My Profile</h2>
+
+        <h3>My Posts</h3>
+        <p>top posts here</p>
+        <!-- top posts + see all -->
+        
+        <h3>Change username</h3>
+        <div class="profile-container">
+            <form autocomplete="off">
+                <input type="text" placeholder="Enter new username" name="new_user_name" required>
+                <input type="password" placeholder="Enter password" name="pass" required>
+                <button type="submit"><b>></b></button>
+            </form>
+        </div>
+        
+
+        <h3>Change password</h3>
+        <div class="profile-container">
+            <form autocomplete="off">
+                <input type="password" placeholder="Enter old password" name="old_pass" required>
+                <input type="password" placeholder="Enter new password" name="new_pass" required>
+                <button type="submit"><b>></b></button>
+            </form>
         </div>
     </main>
 

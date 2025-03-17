@@ -1,7 +1,9 @@
+<?php require "..\back-end\user_in.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Project Apple | Post Successful</title>
+    <title>Project Apple | Log in/Sign up</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -18,18 +20,24 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="topics.php">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
-                <li><a href="profile.php">My Profile</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="profile.php">My Profile</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
-    <main>
-        <h2>Post Successful!</h2>
 
-        <p style="font-size: 25px; font-weight: bold;">Would you like to...</p>
-        <div class="button-container">
-            <a href="#" class="button">Review Your Post</a> <!-- review-post.html -->
-            <a href="#" class="button">See Related Posts</a> <!-- depending on the topic, direct user to topic's page -->
-            <a href="new-post.html" class="button">+ Make a New Post</a>
+    <main>
+        <h2>Log in / Sign up</h2>
+        <div class="login-container">
+            <form action="entry.php" method="POST" autocomplete="off">
+                <input type="text" placeholder="Enter username" name="username" value="<?= htmlspecialchars($_POST["username"] ?? "") ?>" required>
+                <input type="password" placeholder="Enter password" name="pass" required>
+                <?php if ($is_invalid): ?>
+                    <em style="color: #c1121f;">Invalid login</em><br>
+                <?php endif; ?>
+                <button type="submit"><b>></b></button>
+            </form>
         </div>
     </main>
 
