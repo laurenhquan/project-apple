@@ -175,7 +175,7 @@ main {
 
 /* "missions" popup box */
 .modal {
-    display: flex; /* Show the modal immediately */
+    display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
