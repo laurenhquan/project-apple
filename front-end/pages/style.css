@@ -222,3 +222,16 @@ main {
     background-color: #e3d4c2;
     color: #664d3b;
 }
+
+/*profile drop down*/
+.profile-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #4a3627;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.profile-dropdown.show .dropdown-content {
+    display: block;
+}
