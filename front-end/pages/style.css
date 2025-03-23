@@ -90,6 +90,7 @@ main {
 }
 
 .login-button:hover {
+    /* background-color: #4e3b2c; */
     transform: scale(1.05);
 }
 
@@ -146,6 +147,7 @@ main {
 
 /* hover effect for login button */
 .login-container button:hover {
+    /* background-color: #4e3b2c; */
     transform: scale(1.05);
 }
 
@@ -219,54 +221,4 @@ main {
     transform: scale(1.05);
     background-color: #e3d4c2;
     color: #664d3b;
-}
-
-/* Profile dropdown container */
-/* Hide profile button by default */
-.profile-container {
-    display: none;
-}
-
-/* Show profile button after login */
-.profile-container.show {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-/* Style for the profile button */
-.profile-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* Style for the dropdown content */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    min-width: 150px;
-    z-index: 1;
-}
-
-/* Show dropdown when button is clicked */
-.dropdown-content.show {
-    display: block;
-}
-
-/* Style for dropdown links */
-.dropdown-content a {
-    color: black;
-    padding: 10px 12px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change background color on hover */
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
 }
