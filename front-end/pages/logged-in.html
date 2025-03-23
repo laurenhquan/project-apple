@@ -13,14 +13,22 @@
 <body>
     <header>
         <a class="logo" href="logged-in.html" style="text-decoration: none;">PROJECT APPLE</a>
-        <nav>
+        <nav class="navbar">
             <ul>
-                <li><a href="logged-in.html" class="active">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="topics.html">Topics</a></li>
-                <li><a href="#" id="missionButton">Our Mission</a></li>
-                <li><a href="profile.html">My Profile</a></li>
+                <li><a href="mission.html">Our Mission</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">My Profile ▼</a>
+                    <div class="dropdown-content">
+                        <a href="profile.html">View Profile</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="logout.html">Log Out</a>
+                    </div>
+                </li>
             </ul>
         </nav>
+        
     </header>
     <a href="new-post.html" class="login-button">+ Make a Post</a>
     <main>
@@ -58,6 +66,19 @@
                 modal.style.display = "none";
             }
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.querySelector(".dropdown");
+
+    // Simulated login check (replace this with actual login state logic)
+    const isLoggedIn = true; // Change this based on actual login status
+
+    if (!isLoggedIn) {
+        dropdown.style.display = "none"; // Hide dropdown if not logged in
+            }
+        });
+
+    
     });
     
         </script>
