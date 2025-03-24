@@ -23,7 +23,14 @@
                 <li><a href="topics.php">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="profile.php">My Profile</a></li>
+                    <li class="dropdown">
+                     <a href="profile.php" class="dropbtn">My Profile ▼</a>
+                     <div class="dropdown-content">
+                         <a href="profile.php">View Profile</a>
+                         <a href="profile.php">Settings</a>
+                         <a href="profile.php">Log Out</a>
+                     </div>
+                 </li>
                 <?php endif; ?>
             </ul>
         </nav>
@@ -52,26 +59,40 @@
         const modal = document.getElementById("missionModal");
         const closeButton = document.querySelector(".close");
         const missionButton = document.getElementById("missionButton");
-
+    
         if (missionButton) {
             missionButton.addEventListener("click", function (event) {
                 event.preventDefault();
                 modal.style.display = "flex";
             });
         }
-
+    
         closeButton.addEventListener("click", function () {
             modal.style.display = "none";
         });
-
+    
         modal.addEventListener("click", function (event) {
             if (event.target === modal) {
                 modal.style.display = "none";
             }
         });
-    });
 
+        document.addEventListener("DOMContentLoaded", function () {
+    const dropdown = document.querySelector(".dropdown");
+
+    // Simulated login check (replace this with actual login state logic)
+    const isLoggedIn = true; // Change this based on actual login status
+
+    if (!isLoggedIn) {
+        dropdown.style.display = "none"; // Hide dropdown if not logged in
+            }
+        });
+
+    
+    });
+    
         </script>
     <!--Missions Pop Up End-->
+
 </body>
 </html>
