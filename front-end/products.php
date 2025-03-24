@@ -1,30 +1,35 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Project Apple | Home</title>
+    <title>Project Apple | Products</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=EB+Garamond&display=swap" rel="stylesheet">
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
 <body>
     <header>
-        <a class="logo" href="index.html" style="text-decoration: none;">PROJECT APPLE</a>
+        <a class="logo" href="index.php" style="text-decoration: none;">PROJECT APPLE</a>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="topics.html">Topics</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="topics.php" class="active">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="profile.php">My Profile</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
-    <a href="entry.html" class="login-button">Log in / Sign up</a>
+
     <main>
-        <h2 style="font-size: 40px; font-weight: 500;">Welcome to Project Apple!</h2>
+        <h2>Products</h2>
+        <p>display posts here</p>
     </main>
 
     <!--Missions Pop Up Start-->
@@ -42,25 +47,25 @@
         const modal = document.getElementById("missionModal");
         const closeButton = document.querySelector(".close");
         const missionButton = document.getElementById("missionButton");
-    
+
         if (missionButton) {
             missionButton.addEventListener("click", function (event) {
                 event.preventDefault();
                 modal.style.display = "flex";
             });
         }
-    
+
         closeButton.addEventListener("click", function () {
             modal.style.display = "none";
         });
-    
+
         modal.addEventListener("click", function (event) {
             if (event.target === modal) {
                 modal.style.display = "none";
             }
         });
     });
-    
+
         </script>
     <!--Missions Pop Up End-->
 </body>

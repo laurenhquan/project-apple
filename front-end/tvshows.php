@@ -1,7 +1,9 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Project Apple | Topics</title>
+    <title>Project Apple | TV Shows</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -12,21 +14,26 @@
 
 <body>
     <header>
-        <a class="logo" href="index.html" style="text-decoration: none;">PROJECT APPLE</a>
+        <a class="logo" href="index.php" style="text-decoration: none;">PROJECT APPLE</a>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="topics.html" class="active">Topics</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="topics.php" class="active">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="profile.php">My Profile</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2 style="font-size: 40px;">Topics</h2>
+        <h2>TV Shows</h2>
+        <p>display posts here</p>
     </main>
-     <!--Missions Pop Up Start-->
-     <div id="missionModal" class="modal">
+
+    <!--Missions Pop Up Start-->
+    <div id="missionModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>OUR MISSION</h2>
@@ -40,25 +47,25 @@
         const modal = document.getElementById("missionModal");
         const closeButton = document.querySelector(".close");
         const missionButton = document.getElementById("missionButton");
-    
+
         if (missionButton) {
             missionButton.addEventListener("click", function (event) {
                 event.preventDefault();
                 modal.style.display = "flex";
             });
         }
-    
+
         closeButton.addEventListener("click", function () {
             modal.style.display = "none";
         });
-    
+
         modal.addEventListener("click", function (event) {
             if (event.target === modal) {
                 modal.style.display = "none";
             }
         });
     });
-    
+
         </script>
     <!--Missions Pop Up End-->
 </body>

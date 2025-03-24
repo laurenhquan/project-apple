@@ -1,7 +1,9 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Project Apple | Post Successful</title>
+    <title>Project Apple | Topics</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -12,26 +14,40 @@
 
 <body>
     <header>
-        <a class="logo" href="logged-in.html" style="text-decoration: none;">PROJECT APPLE</a>
+        <a class="logo" href="index.php" style="text-decoration: none;">PROJECT APPLE</a>
         <nav>
             <ul>
-                <li><a href="logged-in.html" class="active">Home</a></li>
-                <li><a href="topics.html">Topics</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="topics.php" class="active">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
-                <li><a href="profile.html">My Profile</a></li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li><a href="profile.php">My Profile</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
-    <main>
-        <h2 style="font-size: 40px;">Post Successful!</h2>
-        <p style="font-size: 18px; font-weight: bold;">Would you like to...</p>
 
-        <div class="button-container">
-            <a href="review.html" class="button">Review Your Post</a>
-            <a href="related_posts.html" class="button">See Related Posts</a>
-            <a href="new-post.html" class="button">+ Make a New Post</a>
+    <main>
+        <h2>Topics</h2>
+
+        <!-- <div class="topic-container">
+            <form method="get" autocomplete="off">
+                <input type="text" placeholder="Search topic" name="topic">
+            </form>
+        </div> -->
+
+        <div class="topic-container">
+            <a href="eatery.php">Cafes<br>+<br>Restaurants</a>
+            <a href="food.php">Food</a>
+            <a href="drinks.php">Drinks</a>
+            <a href="products.php">Products</a>
+            <a href="movies.php">Movies</a>
+            <a href="tvshows.php">TV Shows</a>
+            <a href="videogames.php">Video Games</a>
+            <a href="books.php">Books</a>
         </div>
     </main>
+
     <!--Missions Pop Up Start-->
     <div id="missionModal" class="modal">
         <div class="modal-content">
@@ -47,27 +63,26 @@
         const modal = document.getElementById("missionModal");
         const closeButton = document.querySelector(".close");
         const missionButton = document.getElementById("missionButton");
-    
+
         if (missionButton) {
             missionButton.addEventListener("click", function (event) {
                 event.preventDefault();
                 modal.style.display = "flex";
             });
         }
-    
+
         closeButton.addEventListener("click", function () {
             modal.style.display = "none";
         });
-    
+
         modal.addEventListener("click", function (event) {
             if (event.target === modal) {
                 modal.style.display = "none";
             }
         });
     });
-    
+
         </script>
     <!--Missions Pop Up End-->
-
 </body>
 </html>
