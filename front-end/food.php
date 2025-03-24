@@ -21,7 +21,14 @@
                 <li><a href="topics.php" class="active">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <li><a href="profile.php">My Profile</a></li>
+                    <li class="dropdown">
+                        <a href="profile.php" class="dropbtn">My Profile ▼</a>
+                        <div class="dropdown-content">
+                            <a href="profile.php">View Profile</a>
+                            <a href="settings.php">Settings</a>
+                            <a href="../back-end/user_out.php">Sign Out</a>
+                        </div>
+                    </li>
                 <?php endif; ?>
             </ul>
         </nav>

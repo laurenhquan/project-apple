@@ -20,7 +20,14 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="topics.php">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
-                <li><a href="profile.php" class="active">My Profile</a></li>
+                <li class="dropdown">
+                    <a href="profile.php" class="dropbtn">My Profile ▼</a>
+                        <div class="dropdown-content">
+                        <a href="profile.php">View Profile</a>
+                        <a href="settings.php">Settings</a>
+                        <a href="../back-end/user_out.php">Sign Out</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -33,25 +40,6 @@
         <h3>My Posts</h3>
         <p>top posts here</p>
         <!-- top posts + see all -->
-        
-        <h3>Change username</h3>
-        <div class="profile-container">
-            <form autocomplete="off">
-                <input type="text" placeholder="Enter new username" name="new_user_name" required>
-                <input type="password" placeholder="Enter password" name="pass" required>
-                <button type="submit"><b>></b></button>
-            </form>
-        </div>
-        
-
-        <h3>Change password</h3>
-        <div class="profile-container">
-            <form autocomplete="off">
-                <input type="password" placeholder="Enter old password" name="old_pass" required>
-                <input type="password" placeholder="Enter new password" name="new_pass" required>
-                <button type="submit"><b>></b></button>
-            </form>
-        </div>
     </main>
 
     <!--Missions Pop Up Start-->

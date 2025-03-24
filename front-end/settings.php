@@ -1,9 +1,9 @@
-<?php require "..\back-end\user_in.php" ?>
+<?php if(session_status() !== 2) session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Project Apple | Log in/Sign up</title>
+    <title>Project Apple | My Profile</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -20,29 +20,38 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="topics.php">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <li class="dropdown">
-                        <a href="profile.php" class="dropbtn">My Profile ▼</a>
+                <li class="dropdown">
+                    <a href="profile.php" class="dropbtn">My Profile ▼</a>
                         <div class="dropdown-content">
-                            <a href="profile.php">View Profile</a>
-                            <a href="settings.php">Settings</a>
-                            <a href="../back-end/user_out.php">Sign Out</a>
-                        </div>
-                    </li>
-                <?php endif; ?>
+                        <a href="profile.php">View Profile</a>
+                        <a href="settings.php">Settings</a>
+                        <a href="../back-end/user_out.php">Sign Out</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
+    <a href="../back-end/user_out.php" class="login-button">Sign out</a>
+
     <main>
-        <h2>Log in / Sign up</h2>
-        <div class="login-container">
-            <form action="entry.php" method="POST" autocomplete="off">
-                <input type="text" placeholder="Enter username" name="username" value="<?= htmlspecialchars($_POST["username"] ?? "") ?>" required>
+        <h2>Settings</h2>
+        
+        <h3>Change username</h3>
+        <div class="profile-container">
+            <form autocomplete="off">
+                <input type="text" placeholder="Enter new username" name="new_user_name" required>
                 <input type="password" placeholder="Enter password" name="pass" required>
-                <?php if ($is_invalid): ?>
-                    <em style="color: #c1121f;">Invalid login</em><br>
-                <?php endif; ?>
+                <button type="submit"><b>></b></button>
+            </form>
+        </div>
+        
+
+        <h3>Change password</h3>
+        <div class="profile-container">
+            <form autocomplete="off">
+                <input type="password" placeholder="Enter old password" name="old_pass" required>
+                <input type="password" placeholder="Enter new password" name="new_pass" required>
                 <button type="submit"><b>></b></button>
             </form>
         </div>
