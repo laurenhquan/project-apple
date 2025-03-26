@@ -90,7 +90,6 @@
         </div>
     </div>
 
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
         const modal = document.getElementById("missionModal");
