@@ -1,3 +1,5 @@
+<?php require "..\back-end\post-it.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +21,7 @@
                 <li><a href="topics.php">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
                 <li class="dropdown">
-                    <a href="profile.php" class="dropbtn">My Profile ▼</a>
+                    <a href="profile.php" class="dropbtn">My Profile</a>
                         <div class="dropdown-content">
                         <a href="profile.php">View Profile</a>
                         <a href="settings.php">Settings</a>
@@ -33,7 +35,7 @@
     <main>
         <h2>Make a Post</h2>
         <div class="login-container">
-            <form action="post-successful.html" method="post" autocomplete="off">
+            <form action="new-post.php" method="POST" autocomplete="off">
                 <select name="topic" required>
                     <option value="placeholder" style="font-weight: bold; color: #b89179;" disabled selected value>-- Select a Topic --</option>
                     <option value="eatery">Cafes + Restaurants</option>
@@ -45,7 +47,7 @@
                     <option value="videogames">Video Games</option>
                     <option value="books">Books</option>
                 </select>
-                <input type="text" placeholder="Enter name" name="name" style="width: 275px;" required>
+                <input type="text" placeholder="Enter name" name="subject_name" style="width: 275px;" required>
                 <label for="rating" style="font-size: 25px; font-weight: bold;">Rating</label>
                 <img id="ratingImage" src="images/imagesrating_5.png" alt="Rating Image" style="width: 150px; display: block; margin: auto;">
                 <input type="range" id="rating" name="rating" min="0" max="10" step="1" style="accent-color: #664d3b; width: 275px;" required>
