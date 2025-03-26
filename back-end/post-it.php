@@ -8,6 +8,8 @@
         $stmt = $mysqli->stmt_init();
         if (!$stmt->prepare($insert_post)) { die("SQL error: " . $mysqli->error); }
 
+        # set SESSION variables
+
         // TO-DO: check what topic_id aligns with the topic name given
         $check_topic = sprintf("SELECT * FROM topics WHERE topic_name = '%s'", $mysqli->real_escape_string($_POST["topic"]));
         $result = $mysqli->query($check_topic);
