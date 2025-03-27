@@ -15,7 +15,7 @@
 
         $stmt->bind_param("isisi", $_SESSION["topic_id"], $_POST["subject_name"], $_POST["rating"], $_POST["desc"], $_SESSION["user_id"]);
         if ($stmt->execute()) {
-            header("Location: post-successful.html");
+            header("Location: post-successful.php");
             exit;
         } else {
             die($mysqli->error . " " . $mysqli->errno);

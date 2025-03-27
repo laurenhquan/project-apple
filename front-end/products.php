@@ -1,4 +1,4 @@
-<?php if(session_status() !== 2) session_start(); ?>
+<?php require "..\back-end\display-posts.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,18 @@
 
     <main>
         <h2>Products</h2>
-        <p>display posts here</p>
+        <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<table><tr><th>" . $row["subject_name"] . "</th></tr>" . 
+                    "<tr><td>display rating apple here</td></tr>" . 
+                    "<tr><td>" . $row["rating_desc"] . "</td></tr>" . 
+                    "<tr><td>- user_" . $row["user_id"] . "</td></tr></table>";
+                }
+            } else {
+                echo "<p style='text-align: center;'>No results found.</p>";
+            }
+        ?>
     </main>
 
     <!--Missions Pop Up Start-->
