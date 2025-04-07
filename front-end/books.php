@@ -1,4 +1,4 @@
-<?php if(session_status() !== 2) session_start(); ?>
+<?php require "..\back-end\display-posts.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,11 +22,11 @@
                 <li><a href="#" id="missionButton">Our Mission</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="dropdown">
-                        <a href="profile.php" class="dropbtn">My Profile ▼</a>
+                        <a href="profile.php" class="dropbtn">My Profile</a>
                         <div class="dropdown-content">
                             <a href="profile.php">View Profile</a>
                             <a href="settings.php">Settings</a>
-                            <a href="profile.php">Log Out</a>
+                            <a href="../back-end/user_out.php">Sign Out</a>
                         </div>
                     </li>
                 <?php endif; ?>
@@ -36,7 +36,21 @@
 
     <main>
         <h2>Books</h2>
-        <p>display posts here</p>
+        
+        <div class="post-container">
+            <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<a><table><tr><th>" . $row["subject_name"] . "</th></tr>" . 
+                        "<tr><td>display rating apple here</td></tr>" . 
+                        "<tr><td>" . $row["rating_desc"] . "</td></tr>" . 
+                        "<tr><td>- user_" . $row["user_id"] . "</td></tr></table></a>";
+                    }
+                } else {
+                    echo "<p style='text-align: center;'>No results found.</p>";
+                }
+            ?>
+        </div>
     </main>
 
     <!-- ISSUE: mission statement pops up immediately on page rather than onclick of "our mission" button -->

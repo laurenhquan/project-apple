@@ -393,3 +393,15 @@ main {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* posts for topic pages */
+
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post-container a {
+    width: 33%;
+    justify-content: center;
+}
