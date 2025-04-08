@@ -90,7 +90,7 @@ main {
     padding: 20px 30px;
     text-align: center;
     font-weight: 500;
-    margin-top: 50px;
+    margin-top: 120px;
 }
 
 /*log-in/sign up button/page code */
@@ -453,3 +453,23 @@ main {
     margin-top: auto;
 }
 
+/*delete post style */
+.delete-btn {
+    background-color: #e3d4c2;
+    color: #664d3b;
+    font-family: "DynaPuff", serif;
+    font-size: 18px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: flex-end;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: #664d3b;
+    color: #e3d4c2;
+    transform: scale(1.05);
+}

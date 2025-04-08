@@ -36,21 +36,7 @@
 
     <main>
         <h2>Books</h2>
-        
-        <div class="post-container">
-            <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<a><table><tr><th>" . $row["subject_name"] . "</th></tr>" . 
-                        "<tr><td>display rating apple here</td></tr>" . 
-                        "<tr><td>" . $row["rating_desc"] . "</td></tr>" . 
-                        "<tr><td>- user_" . $row["user_id"] . "</td></tr></table></a>";
-                    }
-                } else {
-                    echo "<p style='text-align: center;'>No results found.</p>";
-                }
-            ?>
-        </div>
+        <?php renderTopicPosts(8); ?>
     </main>
 
     <!-- ISSUE: mission statement pops up immediately on page rather than onclick of "our mission" button -->
