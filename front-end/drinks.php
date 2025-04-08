@@ -41,10 +41,12 @@
             <?php
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo "<a><table><tr><th>" . $row["subject_name"] . "</th></tr>" . 
-                        "<tr><td>display rating apple here</td></tr>" . 
-                        "<tr><td>" . $row["rating_desc"] . "</td></tr>" . 
-                        "<tr><td>- user_" . $row["user_id"] . "</td></tr></table></a>";
+                        echo '<div class="post-card">';
+                        echo '<h3>' . htmlspecialchars($row["subject_name"]) . '</h3>';
+                        echo '<p>' . htmlspecialchars($row["rating_desc"]) . '</p>';
+                        echo '<p class="user-credit">— user_' . htmlspecialchars($row["user_id"]) . '</p>';
+                        echo '</div>';
+
                     }
                 } else {
                     echo "<p style='text-align: center;'>No results found.</p>";
