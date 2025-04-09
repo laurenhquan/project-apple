@@ -5,6 +5,14 @@
     font-style: normal;
 }*/
 
+html {
+    cursor: url("images/apple_cursor.png") 0 0, default;
+}
+
+a, button {
+    cursor: url("images/select_cursor.png") 0 0, pointer;
+}
+
 body {
     font-family: "DynaPuff", serif;
     font-weight: 500;
@@ -348,7 +356,6 @@ main {
     position: relative;
 }
 
-
 /* Dropdown button */
 .dropbtn {
     text-decoration: none;
@@ -392,18 +399,6 @@ main {
 /* Show dropdown on hover */
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-/* posts for topic pages */
-
-.post-container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.post-container a {
-    width: 33%;
-    justify-content: center;
 }
 
 /*post card styling */

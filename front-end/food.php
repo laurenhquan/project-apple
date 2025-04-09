@@ -34,6 +34,12 @@
         </nav>
     </header>
 
+    <?php if (!isset($_SESSION['user_id'])): ?>
+        <a href="entry.php" class="login-button">Log in / Sign up</a>
+    <?php else: ?>
+        <a href="new-post.php" class="login-button">+ Make a Post</a>
+    <?php endif; ?>
+
     <main>
         <h2>Food</h2>
         <?php renderTopicPosts(2); ?>
@@ -47,7 +53,6 @@
             <p>Inspired by AppleRankings.com, Project Apple aims to create communities through tier-blogs. By creating such reviews, our users are able to connect with one another and try new things!</p>
         </div>
     </div>
-
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
