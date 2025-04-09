@@ -10,11 +10,8 @@ body {
     font-weight: 500;
     background-color: #dadfdb;
     color: #664d3b;
+    cursor: url('images/apple_cursor.png'), 16 0, auto;
 }
-
-body {
-    cursor: url('apple_cursor.png'), auto;
-  }  
 
 header {
     display: flex;
