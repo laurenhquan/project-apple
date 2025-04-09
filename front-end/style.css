@@ -9,6 +9,10 @@ html {
     cursor: url("images/apple_cursor.png") 0 0, auto;
 }
 
+html.selecting {
+    cursor: url("images/select_cursor.png") 0 0, auto;
+}
+
 body {
     font-family: "DynaPuff", serif;
     font-weight: 500;
