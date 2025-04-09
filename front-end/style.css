@@ -5,12 +5,15 @@
     font-style: normal;
 }*/
 
+html {
+    cursor: url("images/apple_cursor.png") 0 0, auto;
+}
+
 body {
     font-family: "DynaPuff", serif;
     font-weight: 500;
     background-color: #dadfdb;
     color: #664d3b;
-    cursor: url('images/apple_cursor.png'), 16 0, auto;
 }
 
 header {
