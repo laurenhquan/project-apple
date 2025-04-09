@@ -42,22 +42,7 @@
 
     <main>
         <h2>Movies</h2>
-        
-        <div class="post-container">
-            <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo '<div class="post-card">';
-                        echo '<h3>' . htmlspecialchars($row["subject_name"]) . '</h3>';
-                        echo '<p>' . htmlspecialchars($row["rating_desc"]) . '</p>';
-                        echo '<p class="user-credit">— user_' . htmlspecialchars($row["user_id"]) . '</p>';
-                        echo '</div>';
-                    }
-                } else {
-                    echo "<p style='text-align: center;'>No results found.</p>";
-                }
-            ?>
-        </div>
+        <?php renderTopicPosts(5); ?>
     </main>
 
     <!--Missions Pop Up Start-->
