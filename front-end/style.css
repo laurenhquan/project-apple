@@ -12,6 +12,10 @@ body {
     color: #664d3b;
 }
 
+body {
+    cursor: url('apple_cursor.png'), auto;
+  }  
+
 header {
     display: flex;
     justify-content: space-between;
