@@ -90,16 +90,6 @@
 
     
     });
-    
-    document.addEventListener('mousedown', (e) => {
-    const tag = e.target.tagName.toLowerCase();
-    if (tag === 'input' || tag === 'textarea' || tag === 'button' || window.getSelection().toString() === '') return;
-    document.documentElement.classList.add('selecting');
-    });
-
-    document.addEventListener('mouseup', () => {
-    document.documentElement.classList.remove('selecting');
-    });
     </script>
     <!--Missions Pop Up End-->
 

@@ -6,11 +6,7 @@
 }*/
 
 html {
-    cursor: url("images/apple_cursor.png") 0 0, auto;
-}
-
-html.selecting {
-    cursor: url("images/select_cursor.png") 0 0, auto;
+    cursor: url("images/apple_cursor.png") 0 0, default;
 }
 
 body {
@@ -447,4 +443,8 @@ main {
     font-style: italic;
     align-self: flex-end;
     margin-top: auto;
+}
+
+a, button {
+    cursor: url("images/select_cursor.png") 0 0, pointer;
 }
