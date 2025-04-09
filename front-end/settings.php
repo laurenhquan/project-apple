@@ -32,7 +32,9 @@
         </nav>
     </header>
 
-    <a href="../back-end/user_out.php" class="login-button">Sign out</a>
+    <footer>
+        <a href="../back-end/user_out.php" class="login-button">Sign out</a>
+    </footer>
 
     <main>
         <h2>Settings</h2>
