@@ -22,7 +22,7 @@
                 <li><a href="#" id="missionButton">Our Mission</a></li>
                 <li class="dropdown">
                     <a href="profile.php" class="dropbtn">My Profile</a>
-                        <div class="dropdown-content">
+                    <div class="dropdown-content">
                         <a href="profile.php">View Profile</a>
                         <a href="settings.php">Settings</a>
                         <a href="../back-end/user_out.php">Sign Out</a>
@@ -36,10 +36,36 @@
 
     <main>
         <h2>My Profile</h2>
-
         <h3>My Posts</h3>
-        <p>top posts here</p>
-        <!-- top posts + see all -->
+
+        <?php
+        $mysqli = require __DIR__ . "/../back-end/database.php";
+        $user_id = $_SESSION["user_id"];
+        $get_user_posts = "SELECT post_id, subject_name, rating_desc FROM posts WHERE user_id = ?";
+        $stmt = $mysqli->prepare($get_user_posts);
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        ?>
+
+        <div class="post-container">
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="post-card">';
+                    echo '<h3>' . htmlspecialchars($row["subject_name"]) . '</h3>';
+                    echo '<p>' . htmlspecialchars($row["rating_desc"]) . '</p>';
+                    echo '<form method="POST" action="../back-end/delete-post.php" onsubmit="return confirm(\'Are you sure you want to delete this post?\');">';
+                    echo '<input type="hidden" name="post_id" value="' . $row["post_id"] . '">';
+                    echo '<button type="submit" class="delete-btn">Delete</button>';
+                    echo '</form>';
+                    echo '</div>';
+                }
+            } else {
+                echo "<p>You haven't posted anything yet.</p>";
+            }
+            ?>
+        </div>
     </main>
 
     <!--Missions Pop Up Start-->
@@ -51,32 +77,30 @@
         </div>
     </div>
 
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("missionModal");
-        const closeButton = document.querySelector(".close");
-        const missionButton = document.getElementById("missionButton");
+            const modal = document.getElementById("missionModal");
+            const closeButton = document.querySelector(".close");
+            const missionButton = document.getElementById("missionButton");
 
-        if (missionButton) {
-            missionButton.addEventListener("click", function (event) {
-                event.preventDefault();
-                modal.style.display = "flex";
-            });
-        }
-
-        closeButton.addEventListener("click", function () {
-            modal.style.display = "none";
-        });
-
-        modal.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
+            if (missionButton) {
+                missionButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    modal.style.display = "flex";
+                });
             }
-        });
-    });
 
-        </script>
+            closeButton.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
     <!--Missions Pop Up End-->
 </body>
 </html>

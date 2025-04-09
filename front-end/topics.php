@@ -34,6 +34,12 @@
         </nav>
     </header>
 
+    <?php if (!isset($_SESSION['user_id'])): ?>
+        <a href="entry.php" class="login-button">Log in / Sign up</a>
+    <?php else: ?>
+        <a href="new-post.php" class="login-button">+ Make a Post</a>
+    <?php endif; ?>
+
     <main>
         <h2>Topics</h2>
 

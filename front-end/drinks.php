@@ -1,4 +1,7 @@
-<?php require "..\back-end\display-posts.php" ?>
+<?php
+session_start();
+require "../back-end/display-posts.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,23 +37,15 @@
         </nav>
     </header>
 
+    <?php if (!isset($_SESSION['user_id'])): ?>
+        <a href="entry.php" class="login-button">Log in / Sign up</a>
+    <?php else: ?>
+        <a href="new-post.php" class="login-button">+ Make a Post</a>
+    <?php endif; ?>
+
     <main>
         <h2>Drinks</h2>
-        
-        <div class="post-container">
-            <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<a><table><tr><th>" . $row["subject_name"] . "</th></tr>" . 
-                        "<tr><td>display rating apple here</td></tr>" . 
-                        "<tr><td>" . $row["rating_desc"] . "</td></tr>" . 
-                        "<tr><td>- user_" . $row["user_id"] . "</td></tr></table></a>";
-                    }
-                } else {
-                    echo "<p style='text-align: center;'>No results found.</p>";
-                }
-            ?>
-        </div>
+        <?php renderTopicPosts(3); ?>
     </main>
 
     <!--Missions Pop Up Start-->
@@ -62,32 +57,30 @@
         </div>
     </div>
 
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("missionModal");
-        const closeButton = document.querySelector(".close");
-        const missionButton = document.getElementById("missionButton");
+            const modal = document.getElementById("missionModal");
+            const closeButton = document.querySelector(".close");
+            const missionButton = document.getElementById("missionButton");
 
-        if (missionButton) {
-            missionButton.addEventListener("click", function (event) {
-                event.preventDefault();
-                modal.style.display = "flex";
-            });
-        }
-
-        closeButton.addEventListener("click", function () {
-            modal.style.display = "none";
-        });
-
-        modal.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
+            if (missionButton) {
+                missionButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    modal.style.display = "flex";
+                });
             }
-        });
-    });
 
-        </script>
+            closeButton.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            modal.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
     <!--Missions Pop Up End-->
 </body>
 </html>
