@@ -1,7 +1,4 @@
-<?php
-session_start();
-require "../back-end/display-posts.php";
-?>
+<?php require "..\back-end\display-posts.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,11 +34,13 @@ require "../back-end/display-posts.php";
         </nav>
     </header>
 
-    <?php if (!isset($_SESSION['user_id'])): ?>
-        <a href="entry.php" class="login-button">Log in / Sign up</a>
-    <?php else: ?>
-        <a href="new-post.php" class="login-button">+ Make a Post</a>
-    <?php endif; ?>
+    <footer>
+        <?php if (!isset($_SESSION['user_id'])): ?>
+            <a href="entry.php" class="login-button">Log in / Sign up</a>
+        <?php else: ?>
+            <a href="new-post.php" class="login-button">+ Make a Post</a>
+        <?php endif; ?>
+    </footer>
 
     <main>
         <h2>Drinks</h2>
