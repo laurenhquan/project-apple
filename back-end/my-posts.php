@@ -2,11 +2,11 @@
     function getMyPosts() {
         session_start();
 
-        $mysqli = require __DIR__ . "/../back-end/database.php";
+        $mysqli = require __DIR__ . "/database.php";
     
         $user_id = $_SESSION["user_id"];
         $get_posts = "SELECT post_id, subject_name, rating_desc FROM posts WHERE user_id = ?";
-        
+
         $stmt = $mysqli->prepare($get_posts);
         $stmt->bind_param("i", $user_id);
         $stmt->execute();

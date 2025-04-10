@@ -1,4 +1,4 @@
-<?php if(session_status() !== 2) session_start(); ?>
+<?php require "..\back-end\change-profile.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,22 +41,31 @@
         
         <h3>Change username</h3>
         <div class="profile-container">
-            <form autocomplete="off">
+            <form action="settings.php" method="POST" autocomplete="off">
                 <input type="text" placeholder="Enter new username" name="new_user_name" required>
                 <input type="password" placeholder="Enter password" name="pass" required>
-                <button type="submit"><b>></b></button>
+                <button type="submit" name="submit_new_user"><b>></b></button>
             </form>
         </div>
-        
+        <?php
+            if (isset($_POST['submit_new_user'])) {
+                changeUser();
+            }
+        ?>
 
         <h3>Change password</h3>
         <div class="profile-container">
-            <form autocomplete="off">
+            <form action="settings.php" method="POST" autocomplete="off">
                 <input type="password" placeholder="Enter old password" name="old_pass" required>
                 <input type="password" placeholder="Enter new password" name="new_pass" required>
-                <button type="submit"><b>></b></button>
+                <button type="submit" name="submit_new_pass"><b>></b></button>
             </form>
         </div>
+        <?php
+            if (isset($_POST['submit_new_pass'])) {
+                changePass();
+            }
+        ?>
     </main>
 
     <!--Missions Pop Up Start-->
