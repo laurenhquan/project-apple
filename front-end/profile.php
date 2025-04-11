@@ -57,7 +57,7 @@
                     echo '<p>' . htmlspecialchars($row["rating_desc"]) . '</p>';
                     echo '<form method="POST" action="../back-end/delete-post.php" class="delete-form" onsubmit="return confirm(\'Are you sure you want to delete this post?\');">';
                     echo '<input type="hidden" name="post_id" value="' . $row["post_id"] . '">';
-                    echo '<button type="submit" class="delete-x" title="Delete post">×</button>';
+                    echo '<button type="submit" class="delete-x" title="Delete Post">×</button>';
                     echo '</form>';
                     echo '</div>';
                 }

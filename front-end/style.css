@@ -461,7 +461,7 @@ main {
     background: none;
     border: none;
     color: #e3d4c2;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
     cursor: url("images/select_cursor.png") 0 0, pointer;
     transition: transform 0.2s ease;
