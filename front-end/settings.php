@@ -50,7 +50,10 @@
         <?php
             if (isset($_POST['submit_new_user'])) {
                 changeUser();
-                // echo "<em style='color: #8db600;'>Username changed successfully</em><br>";
+                if (isset($_SESSION["flash_message"])) {
+                    echo $_SESSION["flash_message"];
+                    unset($_SESSION["flash_message"]); // remove message after showing it
+                }
             }
         ?>
 
@@ -65,7 +68,10 @@
         <?php
             if (isset($_POST['submit_new_pass'])) {
                 changePass();
-                // echo "<em style='color: #8db600;'>Password changed successfully</em><br>";
+                if (isset($_SESSION["flash_message"])) {
+                    echo $_SESSION["flash_message"];
+                    unset($_SESSION["flash_message"]); // remove message after showing it
+                }
             }
         ?>
     </main>
