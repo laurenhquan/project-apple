@@ -19,7 +19,7 @@
                 <li><a href="topics.php">Topics</a></li>
                 <li><a href="#" id="missionButton">Our Mission</a></li>
                 <li class="dropdown">
-                    <a href="profile.php" class="dropbtn">My Profile ▼</a>
+                    <a href="profile.php" class="dropbtn">My Profile</a>
                         <div class="dropdown-content">
                         <a href="profile.php">View Profile</a>
                         <a href="settings.php">Settings</a>
@@ -34,9 +34,9 @@
 
         <p style="font-size: 25px; font-weight: bold;">Would you like to...</p>
         <div class="button-container">
-            <a href="#" class="button">Review Your Post</a> <!-- review-post.html -->
+            <a href="#" class="button">Review Your Post</a> <!-- review-post.html OR create pop up of most recent post aka the one just made -->
             <a href="#" class="button">See Related Posts</a> <!-- depending on the topic, direct user to topic's page -->
-            <a href="new-post.html" class="button">+ Make a New Post</a>
+            <a href="new-post.php" class="button">+ Make a New Post</a>
         </div>
     </main>
 

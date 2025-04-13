@@ -5,6 +5,16 @@
     font-style: normal;
 }*/
 
+html {
+    cursor: url("images/apple_cursor.png") 0 0, default;
+}
+
+a, button, .login-button, input, textarea, select, .post-card,
+.topic-container a, .dropdown-content a, .dropbtn,.close, .delete-x {
+    cursor: url("images/select_cursor.png") 0 0, pointer;
+}
+
+
 body {
     font-family: "DynaPuff", serif;
     font-weight: 500;
@@ -90,7 +100,7 @@ main {
     padding: 20px 30px;
     text-align: center;
     font-weight: 500;
-    margin-top: 50px;
+    margin-top: 120px;
 }
 
 /*log-in/sign up button/page code */
@@ -194,7 +204,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -280,7 +290,6 @@ main {
     border-radius: 40px;
     font-size: 25px;
     font-weight: 500;
-    cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -348,7 +357,6 @@ main {
     position: relative;
 }
 
-
 /* Dropdown button */
 .dropbtn {
     text-decoration: none;
@@ -392,4 +400,74 @@ main {
 /* Show dropdown on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/*post card styling */
+.post-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.post-card {
+    background-color: #664d3b;
+    color: #e3d4c2;
+    border-radius: 30px;
+    padding: 25px;
+    width: 300px;
+    min-height: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: "DynaPuff", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    text-align: left;
+    position: relative;
+}
+
+.post-card:hover {
+    transform: scale(1.03);
+}
+
+.post-card h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.post-card p {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.post-card .user-credit {
+    font-size: 16px;
+    font-style: italic;
+    align-self: flex-end;
+    margin-top: auto;
+}
+
+/*delete post style */
+.delete-form {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.delete-x {
+    background: none;
+    border: none;
+    color: #e3d4c2;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: url("images/select_cursor.png") 0 0, pointer;
+    transition: transform 0.2s ease;
+}
+
+.delete-x:hover {
+    transform: scale(1.2);
+    color: #ff8888;
 }
