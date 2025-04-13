@@ -1,4 +1,4 @@
-<?php if(session_status() !== 2) session_start(); ?>
+<?php require "..\back-end\my-posts.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,40 +32,14 @@
         </nav>
     </header>
 
-    <a href="../back-end/user_out.php" class="login-button">Sign out</a>
+    <footer>
+        <a href="../back-end/user_out.php" class="login-button">Sign out</a>
+    </footer>
 
     <main>
         <h2>My Profile</h2>
         <h3>My Posts</h3>
-
-        <?php
-        $mysqli = require __DIR__ . "/../back-end/database.php";
-        $user_id = $_SESSION["user_id"];
-        $get_user_posts = "SELECT post_id, subject_name, rating_desc FROM posts WHERE user_id = ?";
-        $stmt = $mysqli->prepare($get_user_posts);
-        $stmt->bind_param("i", $user_id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        ?>
-
-        <div class="post-container">
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div class="post-card">';
-                    echo '<h3>' . htmlspecialchars($row["subject_name"]) . '</h3>';
-                    echo '<p>' . htmlspecialchars($row["rating_desc"]) . '</p>';
-                    echo '<form method="POST" action="../back-end/delete-post.php" class="delete-form" onsubmit="return confirm(\'Are you sure you want to delete this post?\');">';
-                    echo '<input type="hidden" name="post_id" value="' . $row["post_id"] . '">';
-                    echo '<button type="submit" class="delete-x" title="Delete Post">×</button>';
-                    echo '</form>';
-                    echo '</div>';
-                }
-            } else {
-                echo "<p>You haven't posted anything yet.</p>";
-            }
-            ?>
-        </div>
+        <?php getMyPosts(); ?>
     </main>
 
     <!--Missions Pop Up Start-->
