@@ -25,7 +25,7 @@
                 echo '</div>';
             }
         } else {
-            echo "<p>You haven't posted anything yet.</p>";
+            echo "<p style='text-align: center;'>You haven't posted anything yet.</p>";
         }
         echo "</div>";
     }

@@ -42,7 +42,7 @@
         <h3>Change username</h3>
         <div class="profile-container">
             <form action="settings.php" method="POST" autocomplete="off">
-                <input type="text" placeholder="Enter new username" name="new_user_name" required>
+                <input type="text" placeholder="Enter new username" name="new_username" required>
                 <input type="password" placeholder="Enter password" name="pass" required>
                 <button type="submit" name="submit_new_user"><b>></b></button>
             </form>
