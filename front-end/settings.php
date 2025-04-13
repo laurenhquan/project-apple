@@ -50,6 +50,7 @@
         <?php
             if (isset($_POST['submit_new_user'])) {
                 changeUser();
+                // echo "<em style='color: #8db600;'>Username changed successfully</em><br>";
             }
         ?>
 
@@ -64,6 +65,7 @@
         <?php
             if (isset($_POST['submit_new_pass'])) {
                 changePass();
+                // echo "<em style='color: #8db600;'>Password changed successfully</em><br>";
             }
         ?>
     </main>
