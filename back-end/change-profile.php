@@ -25,10 +25,10 @@
                         $stmt = $mysqli->stmt_init(); // create statement
                         if(!$stmt->prepare($update_user)) { die("MySQL error: " . $mysqli->error); } // kill if error with preparing query
                         $stmt->bind_param("si", $_POST['new_username'], $_SESSION['user_id']); // binds parameters
+                        echo "<em style='color: #8db600;'>Username changed successfully</em><br>";
 
                         if($stmt->execute()) { // execute statement
                             $_SESSION["username"] = $_POST["new_username"]; // update session username
-                            echo "<em style='color: #8db600;'>Username changed successfully</em><br>";
                             header("Location: settings.php"); // directs user to home page
                             exit;
                         } else {
@@ -45,8 +45,30 @@
 
         $mysqli = require __DIR__ . "/database.php";
 
-        $is_invalid = TRUE;
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+            if(!password_verify($_POST["old_pass"], $_SESSION["pass_hash"])) { // if password does not match the hash ver of it
+                echo "<em style='color: #c1121f;'>Incorrect password</em><br>";
+            }
+            else { // if password is correct
+                if(password_verify($_POST["new_pass"], $_SESSION["pass_hash"])) { // if user puts in the same password already using
+                    echo "<em style='color: #c1121f;'>Password is already in use</em><br>";
+                }
+                else {
+                    $update_pass = "UPDATE users SET pass_hash = ? WHERE user_id = ?"; // query to update username in db
+                    $stmt = $mysqli->stmt_init(); // create statement
+                    if(!$stmt->prepare($update_pass)) { die("MySQL error: " . $mysqli->error); } // kill if error with preparing query
+                    $stmt->bind_param("si", password_hash($_POST["new_pass"], PASSWORD_DEFAULT), $_SESSION['user_id']); // binds parameters
+                    echo "<em style='color: #8db600;'>Password changed successfully</em><br>";
 
-        if ($is_invalid) { echo "<em style='color: #c1121f;'>Incorrect password</em><br>"; }
+                    if($stmt->execute()) { // execute statement
+                        $_SESSION["pass_hash"] = password_hash($_POST["new_pass"], PASSWORD_DEFAULT); // update session username
+                        header("Location: settings.php"); // directs user to home page
+                        exit;
+                    } else {
+                        die($mysqli->error . " " . $mysqli->errno); // kill if execute gives error
+                    }
+                }
+            }
+        }
     }
 ?>
