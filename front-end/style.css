@@ -10,7 +10,7 @@ html {
 }
 
 a, button, .login-button, input, textarea, select, .post-card,
-.topic-container a, .dropdown-content a, .dropbtn,.close, .delete-x {
+.topic-container a, .dropdown-content a, .dropbtn,.close, .delete-x, .profile-container {
     cursor: url("images/select_cursor.png") 0 0, pointer;
 }
 
