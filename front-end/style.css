@@ -404,10 +404,10 @@ main {
 
 /*post card styling */
 .post-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    justify-items: center;
     padding: 20px;
 }
 
@@ -416,39 +416,46 @@ main {
     color: #e3d4c2;
     border-radius: 30px;
     padding: 25px;
-    width: 300px;
-    min-height: 200px;
+    width: 100%;
+    max-width: 300px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     font-family: "DynaPuff", serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
-    text-align: left;
     position: relative;
+    text-align: left;
+    word-wrap: break-word;
+    transition: transform 0.3s ease;
 }
 
-.post-card:hover {
-    transform: scale(1.03);
-}
-
-.post-card h3 {
-    font-size: 28px;
+.post-title {
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.post-card p {
-    font-size: 18px;
-    margin-bottom: 8px;
+.post-desc {
+    font-size: 17px;
+    line-height: 1.4;
+    margin-bottom: 40px; 
 }
 
-.post-card .user-credit {
+.user-credit {
     font-size: 16px;
     font-style: italic;
-    align-self: flex-end;
-    margin-top: auto;
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
 }
+
+.apple-corner {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    width: 60px;
+    height: auto;
+}
+
 
 /*delete post style */
 .delete-form {
