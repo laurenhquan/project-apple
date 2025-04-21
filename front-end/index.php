@@ -135,11 +135,11 @@
         document.addEventListener("DOMContentLoaded", function () {
     const dropdown = document.querySelector(".dropdown");
 
-    // Simulated login check (replace this with actual login state logic)
-    const isLoggedIn = true; // Change this based on actual login status
+    
+    const isLoggedIn = true; 
 
     if (!isLoggedIn) {
-        dropdown.style.display = "none"; // Hide dropdown if not logged in
+        dropdown.style.display = "none"; 
             }
         });
 
