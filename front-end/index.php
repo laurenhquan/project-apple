@@ -13,6 +13,39 @@
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
 </head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".carousel-track");
+    const cards = document.querySelectorAll(".post-card");
+    const leftBtn = document.querySelector(".carousel-btn.left");
+    const rightBtn = document.querySelector(".carousel-btn.right");
+
+    let index = 0;
+    const visibleCards = 3; // center + peek left & right
+    const totalCards = cards.length;
+    const cardWidth = cards[0].offsetWidth + 20;
+
+    function updateCarousel() {
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    }
+
+    leftBtn.addEventListener("click", () => {
+      if (index > 0) {
+        index--;
+        updateCarousel();
+      }
+    });
+
+    rightBtn.addEventListener("click", () => {
+      if (index < totalCards - visibleCards) {
+        index++;
+        updateCarousel();
+      }
+    });
+
+    window.addEventListener("resize", updateCarousel);
+  });
+</script>
 
 <body>
     <header>
@@ -44,9 +77,27 @@
         <?php endif; ?>
     </footer>
 
-    <main>
-        <h2>Welcome to Project Apple!</h2>
-    </main>
+<main>
+  <section class="intro">
+    <h2>Welcome to Project Apple!</h2>
+  </section>
+
+        <section class="carousel-section">
+        <div class="carousel-wrapper">
+  <button class="carousel-btn left">&#10094;</button>
+
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <?php include("../back-end/display-posts.php"); ?>
+    </div>
+  </div>
+
+  <button class="carousel-btn right">&#10095;</button>
+</div>
+    </section>
+</main>
+
+
 
     <!--Missions Pop Up Start-->
     <div id="missionModal" class="modal">
