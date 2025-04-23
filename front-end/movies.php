@@ -1,4 +1,4 @@
-<?php require "..\back-end\display-posts.php" ?>
+<?php require "../back-end/display-topic-posts.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
