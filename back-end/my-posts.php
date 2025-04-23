@@ -6,7 +6,7 @@
     
         $user_id = $_SESSION["user_id"];
         $get_posts = "SELECT post_id, subject_name, rating_desc FROM posts WHERE user_id = ?";
-        
+
         $stmt = $mysqli->prepare($get_posts);
         $stmt->bind_param("i", $user_id);
         $stmt->execute();
@@ -25,7 +25,7 @@
                 echo '</div>';
             }
         } else {
-            echo "<p>You haven't posted anything yet.</p>";
+            echo "<p style='text-align: center;'>You haven't posted anything yet.</p>";
         }
         echo "</div>";
     }

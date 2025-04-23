@@ -1,4 +1,4 @@
-<?php if(session_status() !== 2) session_start(); ?>
+<?php require "..\back-end\change-profile.php" ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,22 +41,39 @@
         
         <h3>Change username</h3>
         <div class="profile-container">
-            <form autocomplete="off">
-                <input type="text" placeholder="Enter new username" name="new_user_name" required>
+            <form action="settings.php" method="POST" autocomplete="off">
+                <input type="text" placeholder="Enter new username" name="new_username" required>
                 <input type="password" placeholder="Enter password" name="pass" required>
-                <button type="submit"><b>></b></button>
+                <button type="submit" name="submit_new_user"><b>></b></button>
             </form>
         </div>
-        
+        <?php
+            if (isset($_POST['submit_new_user'])) {
+                changeUser();
+                if (isset($_SESSION["flash_message"])) {
+                    echo $_SESSION["flash_message"];
+                    unset($_SESSION["flash_message"]); // remove message after showing it
+                }
+            }
+        ?>
 
         <h3>Change password</h3>
         <div class="profile-container">
-            <form autocomplete="off">
+            <form action="settings.php" method="POST" autocomplete="off">
                 <input type="password" placeholder="Enter old password" name="old_pass" required>
                 <input type="password" placeholder="Enter new password" name="new_pass" required>
-                <button type="submit"><b>></b></button>
+                <button type="submit" name="submit_new_pass"><b>></b></button>
             </form>
         </div>
+        <?php
+            if (isset($_POST['submit_new_pass'])) {
+                changePass();
+                if (isset($_SESSION["flash_message"])) {
+                    echo $_SESSION["flash_message"];
+                    unset($_SESSION["flash_message"]); // remove message after showing it
+                }
+            }
+        ?>
     </main>
 
     <!--Missions Pop Up Start-->

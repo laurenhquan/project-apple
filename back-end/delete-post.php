@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["post_id"])) {
 
         if ($delete_stmt->affected_rows === 1) {
             // success! -> redirect
-            header("Location: ../front-end/profile.php");
+            header("Location: " . $_SERVER['HTTP_REFERER']);
             exit;
         } else {
             die("Delete failed or no row affected.");
