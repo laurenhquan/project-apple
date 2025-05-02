@@ -34,8 +34,8 @@
 
         <p style="font-size: 25px; font-weight: bold;">Would you like to...</p>
         <div class="button-container">
-            <a href="#" class="button">Review Your Post</a> <!-- review-post.html OR create pop up of most recent post aka the one just made -->
-            <a href="#" class="button">See Related Posts</a> <!-- depending on the topic, direct user to topic's page -->
+            <a href="#" class="button">Review Your Post</a> 
+            <a href="#" class="button">See Related Posts</a> 
             <a href="new-post.php" class="button">+ Make a New Post</a>
         </div>
     </main>
