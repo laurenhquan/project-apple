@@ -1,4 +1,7 @@
-<?php require "../back-end/display-topic-posts.php" ?>
+<?php 
+    session_start();
+    require "../back-end/display-topic-posts.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
