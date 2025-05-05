@@ -94,6 +94,10 @@ nav ul li a.active {
     background-color: #e3d4c2;
     color: #664d3b;
     border-radius: 20px;
+    background-image: url('TreeBkg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
 main {
