@@ -19,6 +19,13 @@
                 echo '<p class="post-desc">' . nl2br(htmlspecialchars($row["rating_desc"])) . '</p>';
                 echo '<p class="user-credit">user_' . htmlspecialchars($row["user_id"]) . ' on ' . htmlspecialchars($row["topic_name"]) . '</p>';
                 echo '<img src="images/imagesrating_' . intval($row["rating"]) . '.png" alt="Rating" class="apple-corner">';
+
+                if (isset($_SESSION['user_id']) && $row['user_id'] == $_SESSION['user_id']) {
+                    echo '<form method="POST" action="../back-end/delete-post.php" class="delete-form" onsubmit="return confirm(\'Are you sure you want to delete this post?\');">';
+                    echo '<input type="hidden" name="post_id" value="' . $row["post_id"] . '">';
+                    echo '<button type="submit" class="delete-x" title="Delete Post">×</button>';
+                    echo '</form>';
+                }
                 echo '</div>';
             }
         } else {
