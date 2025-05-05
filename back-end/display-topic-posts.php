@@ -1,5 +1,7 @@
 <?php
 function renderTopicPosts($topic_id) {
+    // session_start();
+    
     $mysqli = require __DIR__ . "/database.php";
 
     $get_posts = "SELECT post_id, subject_name, rating, rating_desc, user_id 

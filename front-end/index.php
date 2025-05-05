@@ -1,4 +1,7 @@
-<?php if(session_status() !== 2) session_start(); ?>
+<?php 
+    session_start();
+    require "..\back-end\display-posts.php"; 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,23 +81,23 @@
     </footer>
 
 <main>
-  <section class="intro">
-    <h2>Welcome to Project Apple!</h2>
-  </section>
-
-        <section class="carousel-section">
-        <div class="carousel-wrapper">
-  <button class="carousel-btn left">&#10094;</button>
-
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <?php include("../back-end/display-posts.php"); ?>
-    </div>
-  </div>
-
-  <button class="carousel-btn right">&#10095;</button>
-</div>
+    <section class="intro">
+        <h2>Welcome to Project Apple!</h2>
     </section>
+
+            <section class="carousel-section">
+            <div class="carousel-wrapper">
+    <button class="carousel-btn left">&#10094;</button>
+
+    <div class="carousel-container">
+        <div class="carousel-track">
+        <?php getPosts(); ?>
+        </div>
+    </div>
+
+    <button class="carousel-btn right">&#10095;</button>
+    </div>
+        </section>
 </main>
 
 
