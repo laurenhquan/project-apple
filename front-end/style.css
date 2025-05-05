@@ -10,7 +10,497 @@ html {
 }
 
 a, button, .login-button, input, textarea, select, .post-card,
-.topic-container a, .dropdown-content a, .dropbtn,.close, .delete-x {
+.topic-container a, .dropdown-content a, .dropbtn,.close, .delete-x, .profile-container {
+    cursor: url("images/select_cursor.png") 0 0, pointer;
+}
+
+
+body {
+    font-family: "DynaPuff", serif;
+    font-weight: 500;
+    background-color: #dadfdb;
+    color: #664d3b;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #dadfdb;
+    border-bottom: 2px solid #664d3b;
+}
+
+footer {
+    align-items: end;
+    padding: 15px 30px;
+    background-color: #dadfdb;
+}
+
+.logo {
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #664d3b;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* nav menu */
+
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Aligns items properly */
+    align-items: center;
+    background-color: #dadfdb;
+    padding: 15px 30px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+/* nav links */
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    color: #664d3b; /* Default text color */
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #e3d4c2;
+    color: #664d3b;
+    border-radius: 20px;
+    background-image: url('TreeBkg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+main {
+    padding: 20px 30px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 120px;
+}
+
+/*log-in/sign up button/page code */
+
+.login-button {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    color: #e3d4c2;
+    background-color: #664d3b;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+    /* background-color: #4e3b2c; */
+    transform: scale(1.05);
+}
+
+.login-container {
+    text-align: center;
+    font-weight: 500;
+    margin-top: 50px;
+}
+ /* input field style */
+
+.login-container input,
+.login-container textarea {
+    display: block;
+    width: 250px;
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    background-color: #e3d4c2;
+    color: #664d3b;
+    font-family: "DynaPuff", serif;
+    font-size: 25px;
+}
+
+.login-container select {
+    display: block;
+    width: 300px; 
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    background-color: #e3d4c2;
+    color: #664d3b;
+    text-align: center;
+    font-family: "DynaPuff", serif;
+    font-size: 25px;
+}
+
+/* placeholder text style */
+.login-container input::placeholder,
+.login-container textarea::placeholder {
+    color: #b89179;
+    font-weight: 500;
+}
+
+/* log in button style */
+
+.login-container button {
+    display: inline-block;
+    background-color: #664d3b;
+    color: #dadfdb;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.login-container input,
+.login-container button,
+.login-container select,
+.login-container textarea {
+    font-family: "DynaPuff", serif;
+}
+
+/* hover effect for login button */
+.login-container button:hover {
+    /* background-color: #4e3b2c; */
+    transform: scale(1.05);
+}
+
+/* "missions" popup box */
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #664d3b;
+    color: #e3d4c2;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    max-width: 600px;
+    font-size: 18px;
+    position: relative;
+}
+
+.modal h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #e3d4c2;
+}
+
+/* post successful buttons */
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #664d3b;
+    color: #e3d4c2;
+    font-family: 'DynaPuff', sans-serif;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s ease;
+    width: auto;
+    text-align: center;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background-color: #e3d4c2;
+    color: #664d3b;
+}
+
+/* topics page organization */
+
+.topic-container {
+    display: grid;
+    grid-template-areas: 'a b d e';
+    justify-content: center;
+    gap: 50px;
+}
+
+.topic-container a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #dadfdb;
+    color: #664d3b;
+    align-content: center;
+    justify-content: center;
+    height: 150px;
+    width: 200px;
+    padding: 10px 20px;
+    border: solid;
+    border-color: #664d3b;
+    border-radius: 40px;
+    font-size: 25px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.topic-container a:hover {
+    background-color: #664d3b;
+    color: #e3d4c2;
+    transform: scale(1.05);
+}
+
+.topic-container form input {
+    width: 100%;
+    display: block;
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    background-color: #e3d4c2;
+    color: #664d3b;
+    font-size: 25px;
+    font-family: "DynaPuff", serif;
+}
+
+.topic-container form input::placeholder {
+    color: #b89179;
+    font-weight: 500;
+}
+
+/* profile page forms */
+.profile-container form input {
+    width: 250px;
+    padding: 12px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 20px;
+    background-color: #e3d4c2;
+    color: #664d3b;
+    font-size: 15px;
+    font-family: "DynaPuff", serif;
+}
+
+.profile-container form input::placeholder {
+    color: #b89179;
+    font-weight: 500;
+}
+
+.profile-container button {
+    background-color: #664d3b;
+    color: #dadfdb;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s;
+}
+
+.profile-container button:hover {
+    font-family: "DynaPuff", serif;
+    transform: scale(1.05);
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+/* Dropdown button */
+.dropbtn {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    color: #664d3b;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #e3d4c2;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    color: #664d3b;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect */
+.dropdown-content a:hover {
+    background-color: #d1b7a1;
+}
+
+/* show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/*post card styling */
+.post-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+
+.post-card {
+    background-color: #664d3b;
+    color: #e3d4c2;
+    border-radius: 30px;
+    padding: 25px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: "DynaPuff", serif;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: left;
+    word-wrap: break-word;
+    transition: transform 0.3s ease;
+}
+
+.post-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.post-desc {
+    font-size: 17px;
+    line-height: 1.4;
+    margin-bottom: 40px; 
+}
+
+.user-credit {
+    font-size: 16px;
+    font-style: italic;
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+}
+
+.apple-corner {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    width: 60px;
+    height: auto;
+}
+
+
+/*delete post style */
+.delete-form {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.delete-x {
+    font-family: "DynaPuff", serif;
+    background: none;
+    border: none;
+    color: #e3d4c2;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: url("images/select_cursor.png") 0 0, pointer;
+    transition: transform 0.2s ease;
+}
+
+.delete-x:hover {
+    transform: scale(1.2);
+    color: #ff8888;
+}
+
+
+/*@font-face {
+    font-family: 'DynaPuff';
+    src: url('fonts/DynaPuff-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+html {
+    cursor: url("images/apple_cursor.png") 0 0, default;
+}
+
+a, button, .login-button, input, textarea, select, .post-card,
+.topic-container a, .dropdown-content a, .dropbtn,.close, .delete-x, .profile-container {
     cursor: url("images/select_cursor.png") 0 0, pointer;
 }
 
@@ -397,58 +887,65 @@ main {
     background-color: #d1b7a1;
 }
 
-/* Show dropdown on hover */
+/* show dropdown on hover */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
 /*post card styling */
 .post-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    justify-items: center;
     padding: 20px;
 }
-
+/*
 .post-card {
     background-color: #664d3b;
     color: #e3d4c2;
     border-radius: 30px;
     padding: 25px;
-    width: 300px;
-    min-height: 200px;
+    width: 100%;
+    max-width: 300px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     font-family: "DynaPuff", serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
-    text-align: left;
     position: relative;
+    text-align: left;
+    word-wrap: break-word;
+    transition: transform 0.3s ease;
 }
-
-.post-card:hover {
-    transform: scale(1.03);
-}
-
-.post-card h3 {
-    font-size: 28px;
+*/
+.post-title {
+    font-size: 22px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.post-card p {
-    font-size: 18px;
-    margin-bottom: 8px;
+.post-desc {
+    font-size: 17px;
+    line-height: 1.4;
+    margin-bottom: 40px; 
 }
 
-.post-card .user-credit {
+.user-credit {
     font-size: 16px;
     font-style: italic;
-    align-self: flex-end;
-    margin-top: auto;
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
 }
+
+.apple-corner {
+    position: absolute;
+    bottom: 12px;
+    right: 15px;
+    width: 60px;
+    height: auto;
+}
+
 
 /*delete post style */
 .delete-form {
@@ -472,3 +969,88 @@ main {
     transform: scale(1.2);
     color: #ff8888;
 }
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 60px 20px;
+    gap: 30px;
+  }
+  
+  .carousel-container {
+    flex: 1;
+    overflow: hidden;
+    max-width: 1200px;
+  }
+  
+  .carousel-track {
+    display: flex;
+    gap: 40px;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px;
+  }
+  
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .carousel-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #664d3b;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  .carousel-btn:hover {
+    transform: scale(1.1);
+    color: #4e3b2c;
+  }
+  
+  /* Carousel Card Style */
+  .carousel-card {
+    flex: 0 0 550px;
+    height: 420px;
+    padding: 35px;
+    scroll-snap-align: center;
+    background-color: #664d3b;
+    color: #e3d4c2;
+    border-radius: 30px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    font-family: "DynaPuff", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .carousel-card .post-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .carousel-card .post-desc {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .carousel-card .user-credit {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: auto;
+  }
+  
