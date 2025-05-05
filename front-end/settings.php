@@ -44,7 +44,7 @@
             <form action="settings.php" method="POST" autocomplete="off">
                 <input type="text" placeholder="Enter new username" name="new_username" required>
                 <input type="password" placeholder="Enter password" name="pass" required>
-                <button type="submit" name="submit_new_user"><b>></b></button>
+                <button type="submit" name="submit_new_user" style="font-family: 'DynaPuff', sans-serif; color: #e3d4c2;"><b>></b></button>
             </form>
         </div>
         <?php
@@ -56,7 +56,7 @@
             <form action="settings.php" method="POST" autocomplete="off">
                 <input type="password" placeholder="Enter old password" name="old_pass" required>
                 <input type="password" placeholder="Enter new password" name="new_pass" required>
-                <button type="submit" name="submit_new_pass"><b>></b></button>
+                <button type="submit" name="submit_new_pass" style="font-family: 'DynaPuff', sans-serif; color: #e3d4c2;"><b>></b></button>
             </form>
         </div>
         <?php
