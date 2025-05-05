@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,8 +36,24 @@
 
         <p style="font-size: 25px; font-weight: bold;">Would you like to...</p>
         <div class="button-container">
-            <a href="#" class="button">Review Your Post</a> 
-            <a href="#" class="button">See Related Posts</a> 
+            <a href="profile.php" class="button">Review Your Post</a> 
+            <?php if ($_SESSION['topic_id'] == 1): ?>
+                <a href="eatery.php" class="button">See Related Posts</a>
+            <?php elseif ($_SESSION['topic_id'] == 2): ?>
+                <a href="food.php" class="button">See Related Posts</a>
+            <?php elseif ($_SESSION['topic_id'] == 3): ?>
+                <a href="drinks.php" class="button">See Related Posts</a>
+            <?php elseif ($_SESSION['topic_id'] == 4): ?>
+                <a href="products.php" class="button">See Related Posts</a>
+            <?php elseif ($_SESSION['topic_id'] == 5): ?>
+                <a href="movies.php" class="button">See Related Posts</a>
+            <?php elseif ($_SESSION['topic_id'] == 6): ?>
+                <a href="tvshows.php" class="button">See Related Posts</a>
+            <?php elseif ($_SESSION['topic_id'] == 7): ?>
+                <a href="videogames.php" class="button">See Related Posts</a>
+            <?php elseif ($_SESSION['topic_id'] == 8): ?>
+                <a href="books.php" class="button">See Related Posts</a>     
+            <?php endif; ?> 
             <a href="new-post.php" class="button">+ Make a New Post</a>
         </div>
     </main>
