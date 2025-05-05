@@ -48,13 +48,7 @@
             </form>
         </div>
         <?php
-            if (isset($_POST['submit_new_user'])) {
-                changeUser();
-                if (isset($_SESSION["flash_message"])) {
-                    echo $_SESSION["flash_message"];
-                    unset($_SESSION["flash_message"]); // remove message after showing it
-                }
-            }
+            if (isset($_POST['submit_new_user'])) { changeUser(); }
         ?>
 
         <h3>Change password</h3>
@@ -66,13 +60,7 @@
             </form>
         </div>
         <?php
-            if (isset($_POST['submit_new_pass'])) {
-                changePass();
-                if (isset($_SESSION["flash_message"])) {
-                    echo $_SESSION["flash_message"];
-                    unset($_SESSION["flash_message"]); // remove message after showing it
-                }
-            }
+            if (isset($_POST['submit_new_pass'])) { changePass(); }
         ?>
     </main>
 
