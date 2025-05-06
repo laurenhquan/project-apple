@@ -1,4 +1,7 @@
-<?php if(session_status() !== 2) session_start(); ?>
+<?php 
+    session_start();
+    require "..\back-end\display-posts.php"; 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,32 +67,31 @@
 
 
 <main>
-  <section class="intro">
-    <h2>Welcome to Project Apple!</h2>
-  </section>
+    <section class="intro">
+        <h2>Welcome to Project Apple!</h2>
+    </section>
 
-        <section class="carousel-section">
+    <section class="carousel-section">
         <div class="carousel-wrapper">
-        <button class="carousel-btn left">&lt;</button>
+            <button class="carousel-btn left">&lt;</button>
 
-  <div class="carousel-container">
-    <div class="carousel-track">
-      <?php include("../back-end/display-posts.php"); ?>
-    </div>
-  </div>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <?php include("../back-end/display-posts.php"); ?>
+                </div>
+            </div>
 
-  <button class="carousel-btn right">&gt;</button> </div>
-</div>
+            <button class="carousel-btn right">&gt;</button>
+        </div>
     </section>
 </main>
 
 
-        <?php if (!isset($_SESSION['user_id'])): ?>
-            <a href="entry.php" class="login-button">Log in / Sign up</a>
-        <?php else: ?>
-            <a href="new-post.php" class="login-button">+ Make a Post</a>
-        <?php endif; ?>
-
+<?php if (!isset($_SESSION['user_id'])): ?>
+    <a href="entry.php" class="login-button">Log in / Sign up</a>
+<?php else: ?>
+    <a href="new-post.php" class="login-button">+ Make a Post</a>
+<?php endif; ?>
 
 
     <!--Missions Pop Up Start-->

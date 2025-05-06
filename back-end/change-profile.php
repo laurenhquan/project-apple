@@ -26,7 +26,6 @@
                         $stmt = $mysqli->stmt_init(); // create statement
                         if(!$stmt->prepare($update_user)) { die("MySQL error: " . $mysqli->error); } // kill if error with preparing query
                         $stmt->bind_param("si", $_POST['new_username'], $_SESSION['user_id']); // binds parameters
-                        $_SESSION["flash_message"] = "<em style='color: #8db600;'>Username changed successfully</em><br>";
 
                         if($stmt->execute()) { // execute statement
                             $_SESSION["username"] = $_POST["new_username"]; // update session username
@@ -59,7 +58,6 @@
                     $stmt = $mysqli->stmt_init(); // create statement
                     if(!$stmt->prepare($update_pass)) { die("MySQL error: " . $mysqli->error); } // kill if error with preparing query
                     $stmt->bind_param("si", password_hash($_POST["new_pass"], PASSWORD_DEFAULT), $_SESSION['user_id']); // binds parameters
-                    $_SESSION["flash_message"] = "<em style='color: #8db600;'>Password changed successfully</em><br>";
 
                     if($stmt->execute()) { // execute statement
                         $_SESSION["pass_hash"] = password_hash($_POST["new_pass"], PASSWORD_DEFAULT); // update session username
