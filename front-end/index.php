@@ -77,7 +77,7 @@
 
             <div class="carousel-container">
                 <div class="carousel-track">
-                    <?php include("../back-end/display-posts.php"); ?>
+                    <?php getPosts(); ?>
                 </div>
             </div>
 
