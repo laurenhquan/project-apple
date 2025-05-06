@@ -31,7 +31,7 @@
                 echo '</div>';
             }
         } else {
-            echo "<p>No recent posts available.</p>";
+            echo '<p style="text-align: center;">No recent posts available.</p>';
         }
     }
 ?>
