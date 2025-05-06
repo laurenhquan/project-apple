@@ -100,7 +100,7 @@ main {
     padding: 20px 30px;
     text-align: center;
     font-weight: 500;
-    margin-top: 120px;
+    margin-top: 0;
 }
 
 /*log-in/sign up button/page code */
@@ -117,6 +117,10 @@ main {
     padding: 10px 20px;
     border-radius: 20px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;    
 }
 
 .login-button:hover {
@@ -1048,5 +1052,22 @@ main {
     font-size: 16px;
     font-style: italic;
     margin-top: auto;
+  }
+  
+  /*heading space fix */
+  
+  main {
+    margin-top: 40px !important;  
+    padding-top: 0 !important;
+  }
+  
+  .intro {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  h2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
   
