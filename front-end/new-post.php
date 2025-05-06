@@ -51,10 +51,10 @@
                 </select>
                 <input type="text" placeholder="Enter name" name="subject_name" style="width: 275px;" required>
                 <label for="rating" style="font-size: 25px; font-weight: bold;">Rating</label>
-                <img id="ratingImage" src="images/imagesrating_5.png" alt="Rating Image" style="width: 150px; display: block; margin: auto;">
+                <img id="ratingImage" src="images/altimagesrating_5.png" alt="Rating Image" style="width: 150px; display: block; margin: auto;">
                 <input type="range" id="rating" name="rating" min="0" max="10" step="1" style="accent-color: #664d3b; width: 275px;" required>
                 <textarea placeholder="Enter description" name="desc" style="width: 275px;"></textarea>
-                <button type="submit"><b>></b></button>
+                <button type="submit" style="color: #e3d4c2; font-family: 'DynaPuff', sans-serif;"><b>></b></button>
             </form>
         </div>
     </main>
