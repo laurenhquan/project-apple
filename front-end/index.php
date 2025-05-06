@@ -16,36 +16,25 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".carousel-track");
-    const cards = document.querySelectorAll(".post-card");
-    const leftBtn = document.querySelector(".carousel-btn.left");
-    const rightBtn = document.querySelector(".carousel-btn.right");
+    const nextBtn = document.querySelector(".carousel-btn.right");
+    const prevBtn = document.querySelector(".carousel-btn.left");
+    const card = document.querySelector(".carousel-card");
 
-    let index = 0;
-    const visibleCards = 3; // center + peek left & right
-    const totalCards = cards.length;
-    const cardWidth = cards[0].offsetWidth + 20;
+    if (!card || !track || !nextBtn || !prevBtn) return;
 
-    function updateCarousel() {
-      track.style.transform = `translateX(-${index * cardWidth}px)`;
-    }
+    const cardWidth = card.offsetWidth + 40; // includes gap
 
-    leftBtn.addEventListener("click", () => {
-      if (index > 0) {
-        index--;
-        updateCarousel();
-      }
+    nextBtn.addEventListener("click", () => {
+      track.scrollBy({ left: cardWidth, behavior: 'smooth' });
     });
 
-    rightBtn.addEventListener("click", () => {
-      if (index < totalCards - visibleCards) {
-        index++;
-        updateCarousel();
-      }
+    prevBtn.addEventListener("click", () => {
+      track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
     });
-
-    window.addEventListener("resize", updateCarousel);
   });
 </script>
+
+
 
 <body>
     <header>
