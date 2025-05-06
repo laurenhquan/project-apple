@@ -14,7 +14,8 @@
 
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo '<div class="post-card carousel-card">';
+                echo '<div class="carousel-card">';
+                echo '  <div class="post-card">';
                 echo '<h3 class="post-title">' . htmlspecialchars($row["subject_name"]) . '</h3>';
                 echo '<p class="post-desc">' . nl2br(htmlspecialchars($row["rating_desc"])) . '</p>';
                 echo '<p class="user-credit">user_' . htmlspecialchars($row["user_id"]) . ' on ' . htmlspecialchars($row["topic_name"]) . '</p>';
@@ -27,10 +28,10 @@
                     echo '</form>';
                 }
                 echo '</div>';
+                echo '</div>';
             }
         } else {
             echo "<p>No recent posts available.</p>";
         }
     }
 ?>
-
