@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Project Apple | Home</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=EB+Garamond&display=swap" rel="stylesheet">
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-
 </head>
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".carousel-track");
@@ -22,7 +22,7 @@
 
     if (!card || !track || !nextBtn || !prevBtn) return;
 
-    const cardWidth = card.offsetWidth + 40; // includes gap
+    const cardWidth = card.offsetWidth + 40; 
 
     nextBtn.addEventListener("click", () => {
       track.scrollBy({ left: cardWidth, behavior: 'smooth' });
@@ -37,6 +37,10 @@
 
 
 <body>
+<div class="right-tree">
+    <img src="images/appletree.png" alt="Tree" />
+</div>
+
     <header>
         <a class="logo" href="index.php" style="text-decoration: none;">PROJECT APPLE</a>
         <nav>
@@ -79,13 +83,13 @@
     </section>
 </main>
 
-<footer>
+
         <?php if (!isset($_SESSION['user_id'])): ?>
             <a href="entry.php" class="login-button">Log in / Sign up</a>
         <?php else: ?>
             <a href="new-post.php" class="login-button">+ Make a Post</a>
         <?php endif; ?>
-</footer>
+
 
 
     <!--Missions Pop Up Start-->
@@ -138,6 +142,7 @@
     <!--Missions Pop Up End-->
 
 
+    <img src="images/applelogo2.webp" alt="Apple Logo" class="corner-apple">
 
 </body>
 </html>

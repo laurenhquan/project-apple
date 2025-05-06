@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Project Apple | Post Successful</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,5 +77,6 @@
 
         </script>
     <!--Missions Pop Up End-->
+    <img src="images/applelogo2.webp" alt="Apple Logo" class="corner-apple">
 </body>
 </html>

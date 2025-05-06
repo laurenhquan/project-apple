@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Project Apple | New Post</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +14,7 @@
 </head>
 
 <body>
+<div class="right-tree"></div>
     <header>
         <a class="logo" href="index.php" style="text-decoration: none;">PROJECT APPLE</a>
         <nav>
@@ -114,5 +116,6 @@
     });
         </script>
     <!--Missions Pop Up End-->
+    <img src="images/applelogo2.webp" alt="Apple Logo" class="corner-apple">
 </body>
 </html>

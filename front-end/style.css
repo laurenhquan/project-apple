@@ -8,7 +8,8 @@ html {
 }
 
 a, button, .login-button, input, textarea, select, .post-card,
-.topic-container a, .dropdown-content a, .dropbtn, .close, .delete-x, .profile-container {
+.topic-container a, .dropdown-content a, .dropbtn, .close, .delete-x,
+.profile-container, .carousel-btn {
     cursor: url("images/select_cursor.png") 0 0, pointer;
 }
 
@@ -19,6 +20,7 @@ body {
     color: #664d3b;
     margin: 0;
 }
+
 
 header {
     display: flex;
@@ -507,7 +509,6 @@ section.intro {
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease, color 0.2s ease;
-    cursor: pointer;
 }
 
 .carousel-btn:hover {
@@ -516,7 +517,8 @@ section.intro {
 }
 
 .carousel-card {
-    flex: 0 0 500px;
+    flex: 0 0 30%;         
+    max-width: 400px;      
     height: 380px;
     scroll-snap-align: center;
     background-color: #664d3b;
@@ -528,7 +530,9 @@ section.intro {
     flex-direction: column;
     transition: transform 0.3s ease;
     padding: 0;
+    margin: 0 10px; 
 }
+
 
 .carousel-card:hover {
     transform: scale(1.03);
@@ -571,3 +575,41 @@ section.intro {
     visibility: visible !important;
     transition: none !important;
 }
+
+@keyframes roll {
+    0% {
+        transform: rotate(0deg) translateX(0);
+    }
+    100% {
+        transform: rotate(360deg) translateX(10px);
+    }
+}
+
+.corner-apple {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    width: 90px;
+    height: 90px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.corner-apple:hover {
+    animation: roll 2s linear infinite;
+}
+
+.right-tree {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.right-tree img {
+    height: auto;
+    width: auto;
+    max-height: none;
+}
+
