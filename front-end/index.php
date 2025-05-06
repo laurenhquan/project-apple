@@ -68,7 +68,7 @@
 
 <main>
     <section class="intro">
-        <h2>Welcome to Project Apple!</h2>
+        <h2 style="border: 5px; border-color: #e3d4c2;">Welcome to Project Apple!</h2>
     </section>
 
     <section class="carousel-section">
