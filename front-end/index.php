@@ -66,7 +66,7 @@
 
         <section class="carousel-section">
         <div class="carousel-wrapper">
-  <button class="carousel-btn left">&#10094;</button>
+        <button class="carousel-btn left">&lt;</button>
 
   <div class="carousel-container">
     <div class="carousel-track">
@@ -74,7 +74,7 @@
     </div>
   </div>
 
-  <button class="carousel-btn right">&#10095;</button>
+  <button class="carousel-btn right">&gt;</button> </div>
 </div>
     </section>
 </main>

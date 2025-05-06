@@ -1,25 +1,23 @@
-/*@font-face {
-    font-family: 'DynaPuff';
-    src: url('fonts/DynaPuff-SemiBold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}*/
+/* global box sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 html {
     cursor: url("images/apple_cursor.png") 0 0, default;
 }
 
 a, button, .login-button, input, textarea, select, .post-card,
-.topic-container a, .dropdown-content a, .dropbtn,.close, .delete-x, .profile-container {
+.topic-container a, .dropdown-content a, .dropbtn, .close, .delete-x, .profile-container {
     cursor: url("images/select_cursor.png") 0 0, pointer;
 }
-
 
 body {
     font-family: "DynaPuff", serif;
     font-weight: 500;
     background-color: #dadfdb;
     color: #664d3b;
+    margin: 0;
 }
 
 header {
@@ -32,7 +30,6 @@ header {
 }
 
 footer {
-    align-items: end;
     padding: 15px 30px;
     background-color: #dadfdb;
 }
@@ -42,10 +39,13 @@ footer {
     font-weight: 600;
     letter-spacing: 2px;
     color: #664d3b;
+    text-decoration: none;
 }
 
 h2 {
     font-size: 40px;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 h3 {
@@ -54,15 +54,6 @@ h3 {
 }
 
 /* nav menu */
-
-.navbar {
-    display: flex;
-    justify-content: flex-end; /* Aligns items properly */
-    align-items: center;
-    background-color: #dadfdb;
-    padding: 15px 30px;
-}
-
 nav ul {
     list-style: none;
     padding: 0;
@@ -77,13 +68,11 @@ nav ul li {
     align-items: center;
 }
 
-/* nav links */
-
 nav ul li a {
     text-decoration: none;
     font-size: 25px;
     font-weight: 500;
-    color: #664d3b; /* Default text color */
+    color: #664d3b;
     padding: 10px 20px;
     border-radius: 20px;
     transition: background-color 0.3s, color 0.3s;
@@ -93,18 +82,21 @@ nav ul li a:hover,
 nav ul li a.active {
     background-color: #e3d4c2;
     color: #664d3b;
-    border-radius: 20px;
 }
 
 main {
     padding: 20px 30px;
     text-align: center;
     font-weight: 500;
-    margin-top: 0;
+    margin-top: 40px;
 }
 
-/*log-in/sign up button/page code */
+section.intro {
+    margin-top: 0;
+    padding-top: 0;
+}
 
+/* log-in/sign up button */
 .login-button {
     position: fixed;
     bottom: 20px;
@@ -118,59 +110,43 @@ main {
     border-radius: 20px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     z-index: 1000;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;    
 }
 
 .login-button:hover {
-    /* background-color: #4e3b2c; */
     transform: scale(1.05);
 }
 
+/* login/entry page container & forms */
 .login-container {
     text-align: center;
     font-weight: 500;
     margin-top: 50px;
 }
- /* input field style */
 
 .login-container input,
-.login-container textarea {
-    display: block;
-    width: 250px;
-    padding: 12px;
-    margin: 10px auto;
-    border: none;
-    border-radius: 20px;
-    background-color: #e3d4c2;
-    color: #664d3b;
-    font-family: "DynaPuff", serif;
-    font-size: 25px;
-}
-
+.login-container textarea,
 .login-container select {
     display: block;
-    width: 300px; 
+    width: 275px;
     padding: 12px;
     margin: 10px auto;
     border: none;
     border-radius: 20px;
     background-color: #e3d4c2;
     color: #664d3b;
-    text-align: center;
     font-family: "DynaPuff", serif;
-    font-size: 25px;
+    font-size: 20px;
+}
+.login-container select {
+     width: 300px;
+     text-align: center;
 }
 
-/* placeholder text style */
 .login-container input::placeholder,
 .login-container textarea::placeholder {
     color: #b89179;
     font-weight: 500;
 }
-
-/* log in button style */
 
 .login-container button {
     display: inline-block;
@@ -181,20 +157,10 @@ main {
     width: 40px;
     height: 40px;
     font-size: 25px;
-    cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s;
 }
 
-.login-container input,
-.login-container button,
-.login-container select,
-.login-container textarea {
-    font-family: "DynaPuff", serif;
-}
-
-/* hover effect for login button */
 .login-container button:hover {
-    /* background-color: #4e3b2c; */
     transform: scale(1.05);
 }
 
@@ -209,6 +175,7 @@ main {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
 }
 
 .modal-content {
@@ -234,12 +201,10 @@ main {
     right: 15px;
     font-size: 24px;
     font-weight: bold;
-    cursor: pointer;
     color: #e3d4c2;
 }
 
 /* post successful buttons */
-
 .button-container {
     display: flex;
     flex-direction: column;
@@ -256,7 +221,6 @@ main {
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
-    cursor: pointer;
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s, transform 0.2s ease;
@@ -272,12 +236,14 @@ main {
 
 /* topics page organization */
 
+
 .topic-container {
     display: grid;
     grid-template-areas: 'a b d e';
     justify-content: center;
     gap: 50px;
 }
+
 
 .topic-container a {
     display: inline-block;
@@ -297,11 +263,13 @@ main {
     transition: background-color 0.3s, color 0.3s;
 }
 
+
 .topic-container a:hover {
     background-color: #664d3b;
     color: #e3d4c2;
     transform: scale(1.05);
 }
+
 
 .topic-container form input {
     width: 100%;
@@ -316,12 +284,17 @@ main {
     font-family: "DynaPuff", serif;
 }
 
+
 .topic-container form input::placeholder {
     color: #b89179;
     font-weight: 500;
 }
 
-/* profile page forms */
+
+/* profile page forms (settings) */
+.profile-container {
+    margin-bottom: 30px;
+}
 .profile-container form input {
     width: 250px;
     padding: 12px;
@@ -347,21 +320,19 @@ main {
     width: 40px;
     height: 40px;
     font-size: 15px;
-    cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s;
+    font-family: "DynaPuff", serif;
 }
 
 .profile-container button:hover {
-    font-family: "DynaPuff", serif;
     transform: scale(1.05);
 }
 
-/* Dropdown container */
+/* dropdown menu (profile) */
 .dropdown {
     position: relative;
 }
 
-/* Dropdown button */
 .dropbtn {
     text-decoration: none;
     font-size: 25px;
@@ -372,7 +343,6 @@ main {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dropdown content (hidden by default) */
 .dropdown-content {
     position: absolute;
     right: 0;
@@ -385,7 +355,6 @@ main {
     z-index: 1000;
 }
 
-/* Dropdown links */
 .dropdown-content a {
     color: #664d3b;
     font-size: 20px;
@@ -396,36 +365,34 @@ main {
     transition: background-color 0.3s;
 }
 
-/* Hover effect */
 .dropdown-content a:hover {
     background-color: #d1b7a1;
 }
 
-/* show dropdown on hover */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/*post card styling */
+/* post container styling (post lists) */
 .post-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    justify-content: center;
-    padding: 40px 60px;
+    justify-items: center; 
+    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
+}
 
-.post-card {
+/* post card for topics, profile */
+.post-card { 
+    width: 100%; 
+    max-width: 450px; 
     background-color: #664d3b;
     color: #e3d4c2;
     border-radius: 30px;
     padding: 25px;
-    width: 100%;
-    max-width: 300px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     font-family: "DynaPuff", serif;
     display: flex;
     flex-direction: column;
@@ -433,513 +400,53 @@ main {
     text-align: left;
     word-wrap: break-word;
     transition: transform 0.3s ease;
-    position: relative;
-    padding: 30px;
+    min-height: 200px;
     padding-bottom: 80px;
-    padding-right: 80px;
 }
 
-.post-title {
+.post-card:hover {
+    transform: scale(1.03);
+}
+
+.post-card .post-title {
     font-size: 22px;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-.post-desc {
+.post-card .post-desc {
     font-size: 17px;
-    line-height: 1.4;
-    margin-bottom: 40px; 
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
-.user-credit {
-    font-size: 16px;
-    font-style: italic;
-    position: absolute;
-    bottom: 15px;
-    left: 20px;
-}
-
-.apple-corner {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: auto;
-  }
-   
-
-
-/*delete post style */
-.delete-form {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-}
-
-.delete-x {
-    font-family: "DynaPuff", serif;
-    background: none;
-    border: none;
-    color: #e3d4c2;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: url("images/select_cursor.png") 0 0, pointer;
-    transition: transform 0.2s ease;
-}
-
-.delete-x:hover {
-    transform: scale(1.2);
-    color: #ff8888;
-}
-
-
-/*@font-face {
-    font-family: 'DynaPuff';
-    src: url('fonts/DynaPuff-SemiBold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}*/
-
-html {
-    cursor: url("images/apple_cursor.png") 0 0, default;
-}
-
-a, button, .login-button, input, textarea, select, .post-card,
-.topic-container a, .dropdown-content a, .dropbtn,.close, .delete-x, .profile-container {
-    cursor: url("images/select_cursor.png") 0 0, pointer;
-}
-
-
-body {
-    font-family: "DynaPuff", serif;
-    font-weight: 500;
-    background-color: #dadfdb;
-    color: #664d3b;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: #dadfdb;
-    border-bottom: 2px solid #664d3b;
-}
-
-footer {
-    align-items: end;
-    padding: 15px 30px;
-    background-color: #dadfdb;
-}
-
-.logo {
-    font-size: 40px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: #664d3b;
-}
-
-h2 {
-    font-size: 40px;
-}
-
-h3 {
-    font-size: 25px;
-    font-weight: 500;
-}
-
-/* nav menu */
-
-.navbar {
-    display: flex;
-    justify-content: flex-end; /* Aligns items properly */
-    align-items: center;
-    background-color: #dadfdb;
-    padding: 15px 30px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-nav ul li {
-    display: flex;
-    align-items: center;
-}
-
-/* nav links */
-
-nav ul li a {
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: 500;
-    color: #664d3b; /* Default text color */
-    padding: 10px 20px;
-    border-radius: 20px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    background-color: #e3d4c2;
-    color: #664d3b;
-    border-radius: 20px;
-}
-
-main {
-    padding: 20px 30px;
-    text-align: center;
-    font-weight: 500;
-    margin-top: 120px;
-}
-
-/*log-in/sign up button/page code */
-
-.login-button {
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: 500;
-    color: #e3d4c2;
-    background-color: #664d3b;
-    padding: 10px 20px;
-    border-radius: 20px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.login-button:hover {
-    /* background-color: #4e3b2c; */
-    transform: scale(1.05);
-}
-
-.login-container {
-    text-align: center;
-    font-weight: 500;
-    margin-top: 50px;
-}
- /* input field style */
-
-.login-container input,
-.login-container textarea {
-    display: block;
-    width: 250px;
-    padding: 12px;
-    margin: 10px auto;
-    border: none;
-    border-radius: 20px;
-    background-color: #e3d4c2;
-    color: #664d3b;
-    font-family: "DynaPuff", serif;
-    font-size: 25px;
-}
-
-.login-container select {
-    display: block;
-    width: 300px; 
-    padding: 12px;
-    margin: 10px auto;
-    border: none;
-    border-radius: 20px;
-    background-color: #e3d4c2;
-    color: #664d3b;
-    text-align: center;
-    font-family: "DynaPuff", serif;
-    font-size: 25px;
-}
-
-/* placeholder text style */
-.login-container input::placeholder,
-.login-container textarea::placeholder {
-    color: #b89179;
-    font-weight: 500;
-}
-
-/* log in button style */
-
-.login-container button {
-    display: inline-block;
-    background-color: #664d3b;
-    color: #dadfdb;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 25px;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s;
-}
-
-.login-container input,
-.login-container button,
-.login-container select,
-.login-container textarea {
-    font-family: "DynaPuff", serif;
-}
-
-/* hover effect for login button */
-.login-container button:hover {
-    /* background-color: #4e3b2c; */
-    transform: scale(1.05);
-}
-
-/* "missions" popup box */
-.modal {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: #664d3b;
-    color: #e3d4c2;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 50%;
-    max-width: 600px;
-    font-size: 18px;
-    position: relative;
-}
-
-.modal h2 {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #e3d4c2;
-}
-
-/* post successful buttons */
-
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.button {
-    background-color: #664d3b;
-    color: #e3d4c2;
-    font-family: 'DynaPuff', sans-serif;
-    font-size: 20px;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s, transform 0.2s ease;
-    width: auto;
-    text-align: center;
-}
-
-.button:hover {
-    transform: scale(1.05);
-    background-color: #e3d4c2;
-    color: #664d3b;
-}
-
-/* topics page organization */
-
-.topic-container {
-    display: grid;
-    grid-template-areas: 'a b d e';
-    justify-content: center;
-    gap: 50px;
-}
-
-.topic-container a {
-    display: inline-block;
-    text-decoration: none;
-    background-color: #dadfdb;
-    color: #664d3b;
-    align-content: center;
-    justify-content: center;
-    height: 150px;
-    width: 200px;
-    padding: 10px 20px;
-    border: solid;
-    border-color: #664d3b;
-    border-radius: 40px;
-    font-size: 25px;
-    font-weight: 500;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.topic-container a:hover {
-    background-color: #664d3b;
-    color: #e3d4c2;
-    transform: scale(1.05);
-}
-
-.topic-container form input {
-    width: 100%;
-    display: block;
-    padding: 12px;
-    margin: 10px auto;
-    border: none;
-    border-radius: 20px;
-    background-color: #e3d4c2;
-    color: #664d3b;
-    font-size: 25px;
-    font-family: "DynaPuff", serif;
-}
-
-.topic-container form input::placeholder {
-    color: #b89179;
-    font-weight: 500;
-}
-
-/* profile page forms */
-.profile-container form input {
-    width: 250px;
-    padding: 12px;
-    margin: 10px auto;
-    border: none;
-    border-radius: 20px;
-    background-color: #e3d4c2;
-    color: #664d3b;
-    font-size: 15px;
-    font-family: "DynaPuff", serif;
-}
-
-.profile-container form input::placeholder {
-    color: #b89179;
-    font-weight: 500;
-}
-
-.profile-container button {
-    background-color: #664d3b;
-    color: #dadfdb;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s;
-}
-
-.profile-container button:hover {
-    font-family: "DynaPuff", serif;
-    transform: scale(1.05);
-}
-
-/* Dropdown container */
-.dropdown {
-    position: relative;
-}
-
-/* Dropdown button */
-.dropbtn {
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: 500;
-    color: #664d3b;
-    padding: 5px 10px;
-    border-radius: 20px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-    position: absolute;
-    right: 0;
-    top: 100%;
-    background-color: #e3d4c2;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    display: none;
-    z-index: 1000;
-}
-
-/* Dropdown links */
-.dropdown-content a {
-    color: #664d3b;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    transition: background-color 0.3s;
-}
-
-/* Hover effect */
-.dropdown-content a:hover {
-    background-color: #d1b7a1;
-}
-
-/* show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/*post card styling */
-.post-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    justify-items: center;
-    padding: 20px;
-}
-.post-title {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-
-.post-desc {
-    font-size: 17px;
-    line-height: 1.4;
-    margin-bottom: 40px; 
-}
-
-.user-credit {
+.post-card .user-credit {
     font-size: 16px;
     font-style: italic;
     position: absolute;
     bottom: 20px;
-    left: 20px;
-    margin-right: 70px;
+    left: 25px;
+    right: 75px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.apple-corner {
+.post-card .apple-corner {
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 25px;
     width: 55px;
     height: auto;
     pointer-events: none;
 }
 
-/*delete post style */
+/* delete post styling */
 .delete-form {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 15px;
+    right: 20px;
 }
 
 .delete-x {
@@ -947,10 +454,10 @@ main {
     background: none;
     border: none;
     color: #e3d4c2;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
-    cursor: url("images/select_cursor.png") 0 0, pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, color 0.2s ease;
+    padding: 0;
 }
 
 .delete-x:hover {
@@ -958,55 +465,59 @@ main {
     color: #ff8888;
 }
 
+/* carousel styling (homepage) */
 .carousel-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 60px 20px;
-    gap: 30px;
-  }
-  
-  .carousel-container {
+    padding: 40px 0px;
+    gap: 15px;
+}
+
+.carousel-container {
     flex: 1;
     overflow: hidden;
     max-width: 1200px;
-  }
-  
-  .carousel-track {
+}
+
+.carousel-track {
     display: flex;
-    gap: 40px;
-    scroll-snap-type: x mandatory;
+    gap: 30px;
     overflow-x: auto;
     scroll-behavior: smooth;
     padding: 20px;
-  }
-  
-  .carousel-track::-webkit-scrollbar {
+}
+
+.carousel-track::-webkit-scrollbar {
     display: none;
-  }  
-  
-  .carousel-btn {
+}
+
+.carousel-btn {
     background: none;
     border: none;
-    font-size: 2rem;
+    font-family: "DynaPuff", serif; 
+    font-size: 3.5rem;           
+    font-weight: bold;            
+    line-height: 1;               
     color: #664d3b;
-    cursor: pointer;
     z-index: 10;
-    padding: 10px;
-    transition: transform 0.2s ease;
-  }
-  
-  .carousel-btn:hover {
+    padding: 5px;                
+    display: inline-flex;         
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+.carousel-btn:hover {
     transform: scale(1.1);
     color: #4e3b2c;
-  }
-  
-  /* Carousel Card Style */
-  .carousel-card {
-    flex: 0 0 550px;
-    height: 420px;
-    padding: 35px;
+}
+
+.carousel-card {
+    flex: 0 0 500px;
+    height: 380px;
     scroll-snap-align: center;
     background-color: #664d3b;
     color: #e3d4c2;
@@ -1015,73 +526,48 @@ main {
     font-family: "DynaPuff", serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
     transition: transform 0.3s ease;
-  }
-  
-  .carousel-card:hover {
+    padding: 0;
+}
+
+.carousel-card:hover {
     transform: scale(1.03);
-  }
-  
-  .carousel-card .post-title {
+}
+
+.carousel-card .post-card {
+    width: 100%; 
+    max-width: none; 
+    height: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 30px;
+    padding-bottom: 80px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.carousel-card .post-card .post-title {
     font-size: 26px;
     font-weight: 700;
     margin-bottom: 15px;
-  }
-  
-  .carousel-card .post-desc {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-  }
-  
-  .carousel-card .user-credit {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 16px;
-    font-style: italic;
-    margin: 0; 
 }
 
+.carousel-card .post-card .post-desc {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+}
 
-  .carousel-card .post-card {
-    width: 100%;
-    height: 100%;
-    box-shadow: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    position: relative; 
-    padding: 30px;
-    padding-bottom: 80px; 
-    padding-right: 80px;
-  }
-  
-  
-  /*heading space fix */
-  
-  main {
-    margin-top: 40px !important;  
-    padding-top: 0 !important;
-  }
-  
-  .intro {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-  
-  h2 {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-
-.carousel-card .user-credit,
-.carousel-card .apple-corner {
+.carousel-card .post-card .user-credit {
+    text-align: left;
     opacity: 1 !important;
     visibility: visible !important;
     transition: none !important;
 }
-
-  
+.carousel-card .post-card .apple-corner {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: none !important;
+}
