@@ -44,7 +44,7 @@
                 <?php if ($is_invalid): ?>
                     <em style="color: #c1121f;">Invalid login</em><br>
                 <?php endif; ?>
-                <button type="submit"><b>></b></button>
+                <button type="submit" style="color: #e3d4c2; font-family: 'DynaPuff', sans-serif;"><b>></b></button>
             </form>
         </div>
     </main>
