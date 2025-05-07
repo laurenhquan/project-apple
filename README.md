@@ -58,31 +58,31 @@ A blogging website inspired by applerankings.com that encourages users to share 
 20. Hit "Go".
 21. Repeat steps #18-20 with the following data:
     {
-        "topic_id": 2
+        "topic_id": 2,
         "topic_name": "food"
     }
     {
-        "topic_id": 3
+        "topic_id": 3,
         "topic_name": "drinks"
     }
     {
-        "topic_id": 4
+        "topic_id": 4,
         "topic_name": "products"
     }
     {
-        "topic_id": 5
+        "topic_id": 5,
         "topic_name": "movies"
     }
     {
-        "topic_id": 6
+        "topic_id": 6,
         "topic_name": "tvshows"
     }
     {
-        "topic_id": 7
+        "topic_id": 7,
         "topic_name": "videogames"
     }
     {
-        "topic_id": 8
+        "topic_id": 8,
         "topic_name": "books"
     }
 ### Setting up the database table for users
