@@ -14,7 +14,7 @@ A blogging website inspired by applerankings.com that encourages users to share 
 5. Paste the HTTPS url into the "Repository URL or Github username and repository" section.
 6. Under the "Local path" section, select "Choose..."
 7. Find where you installed your XAMPP folder.
-8. Select the "htdocs" folder to clone the repository into. <sub>Note: You may need to create an empty folder within the "htdocs" folder.</sub>
+8. Select the "htdocs" folder to clone the repository into. Note: You may need to create an empty folder within the "htdocs" folder.
 ## Setting up the database
 1. Open the XAMPP Control Panel.
 2. Start the Apache and MySQL modules.
